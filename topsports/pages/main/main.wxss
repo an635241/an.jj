@@ -1,0 +1,38 @@
+page{
+    background-color: #f0eff5
+}
+.center{
+     align-items: center;
+     width: 100%;
+     display: flex;
+}
+.table {
+    border: 1px solid #dadada;
+    border-right: 0;
+    border-bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+.tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}
+.td {
+    padding: 10px;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    text-align: center;
+    width: 100%;
+    color: #888888;
+}
+.td0 {
+    padding: 10px;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    background-color: #1aad19
+}
