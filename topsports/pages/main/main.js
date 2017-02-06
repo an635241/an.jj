@@ -110,8 +110,8 @@ Page({
     for(var i=0;i<lists.length;i++){
       if(lists[i].id==e.markerId){
         wx.showModal({
-          title: lists[i].title,
-          content:lists[i].address,
+          title: '品牌：'+lists[i].BrandName,
+          content:lists[i].title+'\n'+lists[i].address,
           showCancel:false
         })
         return;
