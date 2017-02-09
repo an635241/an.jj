@@ -1,0 +1,9 @@
+<view style="padding:20px;background-color:#ffffff">
+    <view style="font-size:20px;font-weight:900">{{title}}</view>
+    <view style="font-size:18px;font-weight:100;padding-top:10px;padding-right:0px">品牌：{{brandName}}</view>
+    <view style="font-size:18px;font-weight:100;padding-top:10px;">地址：{{address}}</view>
+    <button type="primary" bindtap="goback">确定</button>
+</view>
+<!--<view style="padding-left:10px;margin-top:5px;color:red;font-weight:900;font-size:14px">
+    畅销推荐
+</view>-->

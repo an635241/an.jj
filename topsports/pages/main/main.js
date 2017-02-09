@@ -12,7 +12,12 @@ Page({
       brand:"",
       pics:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
       brands:["NK","AD","AS","AO","AK","PU","CV","VN","TB","NF","CB","AC","OT","UG","RB","MT"],
-      left:0
+      left:0,
+      showModelStatus:false,
+      title:"",
+      brandName:"",
+      address:"",
+      products:[]
   },
   onLoad: function () {
     console.log('onLoad')
@@ -106,13 +111,63 @@ Page({
   },
   //店铺点击事件
   markertap(e) {
+    var that = this;
     var lists = wx.getStorageSync('lists');
     for(var i=0;i<lists.length;i++){
       if(lists[i].id==e.markerId){
-        wx.showModal({
-          title: '品牌：'+lists[i].BrandName,
-          content:lists[i].title+'\n'+lists[i].address,
-          showCancel:false
+        // wx.showModal({
+        //   title: '品牌：'+lists[i].BrandName,
+        //   content:lists[i].title+'\n'+lists[i].address+'',
+        //   showCancel:false
+        // })
+        // wx.showActionSheet({
+        //   itemList: [lists[i].BrandName+':'+lists[i].title+'(点击查看)'],
+        //   success: function(res) {
+        //     console.log(res.tapIndex);
+        //     //跳转店铺详细页面
+        //     wx.navigateTo({
+        //       url: '../branch/branch?title='+lists[i].title+'&brandName='+lists[i].BrandName+'&address='+lists[i].address,
+        //       success: function(res){
+        //         // success
+        //       },
+        //       fail: function() {
+        //         // fail
+        //       },
+        //       complete: function() {
+        //         // complete
+        //       }
+        //     })
+        //   },
+        //   fail: function(res) {
+        //     console.log(res.errMsg)
+        //   }
+        // })
+        //请求热销数据
+        wx.request({
+          url: 'https://twx2.topsports.com.cn/topit-weixin-web/mobile/sign/getprosal?branchCode='+lists[i].BrandCode,
+          data: {},
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          // header: {}, // 设置请求的 header
+          success: function(res){
+            // success
+            console.log(res.data);
+            that.setData({
+              products:res.data
+            })
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
+        //显示自定义模态框
+        that.setData({
+          showModelStatus:true,
+          title:lists[i].title,
+          brandName:lists[i].BrandName,
+          address:lists[i].address
         })
         return;
       }
@@ -131,5 +186,11 @@ Page({
     })
     }
     
+  },
+  hideModel(){
+    var that = this
+    that.setData({
+      showModelStatus:false
+    })
   }
 })

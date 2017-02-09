@@ -1,0 +1,8 @@
+.center{
+    display: flex;
+    align-items: center;
+     
+}
+page{
+    background-color: #f0eff5
+}
