@@ -1,9 +1,16 @@
-<view style="padding:20px;background-color:#ffffff">
+<view class="container" style="padding:20px;">
     <view style="font-size:20px;font-weight:900">{{title}}</view>
     <view style="font-size:18px;font-weight:100;padding-top:10px;padding-right:0px">品牌：{{brandName}}</view>
     <view style="font-size:18px;font-weight:100;padding-top:10px;">地址：{{address}}</view>
-    <button type="primary" bindtap="goback">确定</button>
-</view>
+    <view class="center" style="border-radius:5px 5px;width:90%;height:290px;border:1px solid #1AAD19;text-align:cenetr;margin:20px auto">
+    <view style="width:100%;background-color:#1AAD19;color:#ffffff;text-align:center;padding:15px 0px;border-radius:5px 5px 0px 0px;font-size:18px">热销单品<span style="font-size:14px;"><br/>(货号)</span></view>
+        <view wx:for="{{products}}" wx:for-item="product"style="font-size:14px;width:60px;height:87px;float:left;padding:12px;text-align:center;flex-wrap:wrap;">
+            <image src="{{product.url}}" mode="aspectFit" style="width:50px;height:50px;border-radius:25px 25px;border:1px solid #1AAD19;background-color:#ffffff"></image>{{product.product_code}}
+        </view>
+    </view>
+    <view style="color:red">{{message}}</view>
+    <button type="primary" style="width:90%;margin-top:10px" bindtap="goback">确定</button>
 <!--<view style="padding-left:10px;margin-top:5px;color:red;font-weight:900;font-size:14px">
     畅销推荐
 </view>-->
+</view>

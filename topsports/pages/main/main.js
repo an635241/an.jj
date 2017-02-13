@@ -92,7 +92,7 @@ Page({
     var that = this
     //查找店铺
     wx.request({
-      url: 'https://sip.belle.net.cn/topit-weixin-web/mobile/sign/getbranchs?latitude='+that.data.latitude+"&longitude="+that.data.longitude+"&brand="+that.data.brand,
+      url: 'https://twx2.topsports.com.cn/topit-weixin-web/mobile/sign/getbranchs?latitude='+that.data.latitude+"&longitude="+that.data.longitude+"&brand="+that.data.brand,
       data: {},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
@@ -120,31 +120,35 @@ Page({
         //   content:lists[i].title+'\n'+lists[i].address+'',
         //   showCancel:false
         // })
-        // wx.showActionSheet({
-        //   itemList: [lists[i].BrandName+':'+lists[i].title+'(点击查看)'],
-        //   success: function(res) {
-        //     console.log(res.tapIndex);
-        //     //跳转店铺详细页面
-        //     wx.navigateTo({
-        //       url: '../branch/branch?title='+lists[i].title+'&brandName='+lists[i].BrandName+'&address='+lists[i].address,
-        //       success: function(res){
-        //         // success
-        //       },
-        //       fail: function() {
-        //         // fail
-        //       },
-        //       complete: function() {
-        //         // complete
-        //       }
-        //     })
-        //   },
-        //   fail: function(res) {
-        //     console.log(res.errMsg)
-        //   }
-        // })
+        wx.showActionSheet({
+          itemList: [lists[i].BrandName+':'+lists[i].title+'(点击查看)'],
+          success: function(res) {
+            console.log(res.tapIndex);
+            if(res.tapIndex==null){
+                return;
+            }
+            
+            //跳转店铺详细页面
+            wx.navigateTo({
+              url: '../branch/branch?title='+lists[i].title+'&brandName='+lists[i].BrandName+'&address='+lists[i].address+'&branchCode='+lists[i].BranchCode,
+              success: function(res){
+                // success
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            })
+          },
+          fail: function(res) {
+            console.log(res.errMsg)
+          }
+        })
         //请求热销数据
         // wx.request({
-        //   url: 'https://sip.belle.net.cn/topit-weixin-web/sign/getprosal?branchCode=ACCA01',
+        //   url: 'https://twx2.topsports.com.cn/topit-weixin-web/mobile/sign/getprosal?branchCode='+lists[i].BrandCode,
         //   data: {},
         //   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         //   // header: {}, // 设置请求的 header
@@ -162,13 +166,13 @@ Page({
         //     // complete
         //   }
         // })
-        //显示自定义模态框
-        that.setData({
-          showModelStatus:true,
-          title:lists[i].title,
-          brandName:lists[i].BrandName,
-          address:lists[i].address
-        })
+        // //显示自定义模态框
+        // that.setData({
+        //   showModelStatus:true,
+        //   title:lists[i].title,
+        //   brandName:lists[i].BrandName,
+        //   address:lists[i].address
+        // })
         return;
       }
     }

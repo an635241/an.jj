@@ -1,7 +1,6 @@
 .center{
-    display: flex;
-    align-items: center;
-     
+  align-items: center;
+  justify-content: space-between;
 }
 page{
     background-color: #f0eff5
