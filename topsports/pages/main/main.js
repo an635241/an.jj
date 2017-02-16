@@ -92,7 +92,7 @@ Page({
     var that = this
     //查找店铺
     wx.request({
-      url: 'https://twx2.topsports.com.cn/topit-weixin-web/mobile/sign/getbranchs?latitude='+that.data.latitude+"&longitude="+that.data.longitude+"&brand="+that.data.brand,
+      url: app.globalData.linkHead+'mobile/sign/getbranchs?latitude='+that.data.latitude+"&longitude="+that.data.longitude+"&brand="+that.data.brand,
       data: {},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
