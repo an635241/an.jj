@@ -1,4 +1,10 @@
-<view style="z-index:0"><map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="12"  markers="{{markers}}" bindmarkertap="markertap"  show-location style="width: 100%; height: 350px;z-index:0"></map></view>
+<view style="z-index:0;width: 100%; height: 350px;"><scroll-view  scroll-y="true" style="z-index:0;width: 100%; height: 350px;position: fixed;background-color: rgb(255, 255, 255);text-align:center;padding-left:15%" bindtouchstart="touchstart"   bindtouchmove="touchmove">
+<view style="background-color:#eeeeee;padding:5px;font-size:12px;">附近店铺</view>
+<view bindtap="branchtab" wx:for="{{markers}}" wx:for-item="marker" wx:for-index="i" id="{{i}}" style="border-bottom:1px solid #eeeeee;font-size:12px;padding:10px">
+<font wx:if="{{i==0}}" style="color:red;font-weight:900;border:1px solid red;border-radius:10px;padding:3px">近</font> ({{marker.BrandName}}){{marker.title}}   {{marker.juli}}米<br/>
+<view style="font-size:12px;color:#888888;padding-top:5px">{{marker.address}}</view>
+</view>
+</scroll-view><map class="{{open?'open':''}}" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="12"  markers="{{markers}}" bindmarkertap="markertap"  show-location style="width: 100%; height: 350px;z-index:0;position: fixed;" controls="{{controls}}" bindcontroltap="controltap"></map></view>
 <view class="center" style="padding-top:20px">
 <button style="padding-left:120px;padding-right:120px;padding-top:3px;padding-bottom:3px;font-size:15px" type="primary" size="mini" loading="{{loading}}" disabled="{{disabled}}" bindtap="getlocation">{{btnname}}</button>
 </view>
@@ -11,19 +17,6 @@
     </view>
 </scroll-view>
 </view>
-<view class="commodity_screen" bindtap="hideModel" wx:if="{{showModelStatus}}">
-</view>
-<view class="commodity_attr_box" wx:if="{{showModelStatus}}" style="border-radius:10px 10px;">
-<view style="font-size:18px;font-weight:700;padding-top:30px">{{title}}</view>
-    <view style="font-size:14px;font-weight:100;padding-top:10px;color:#777777;">品牌：{{brandName}}</view>
-    <view style="font-size:14px;font-weight:100;padding:5px 20px;color:#777777;">地址：{{address}}</view>
-    <view style="border-radius:5px 5px;width:240px;height:260px;border:1px solid #1AAD19;margin-bottom:20px;margin-top:10px;text-align:cenetr">
-    <view style="width:100%;background-color:#1AAD19;color:#ffffff;text-align:center;padding:15px 0px;border-radius:5px 5px 0px 0px;">热销单品<span style="font-size:14px;"><br/>(货号)</span></view>
-        <view wx:for="{{products}}" wx:for-item="product"style="font-size:14px;width:60px;float:left;padding:10px;">
-            <image src="{{product.url}}" mode="aspectFit" style="width:50px;height:50px;border-radius:25px 25px;border:1px solid #1AAD19;"></image>{{product.product_code}}
-        </view>
-    </view>
-    <button type="primary" bindtap="hideModel" style="width:90%;margin-bottom:20px">确定</button>
-</view>
+
 
 

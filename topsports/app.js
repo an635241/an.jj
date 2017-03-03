@@ -25,6 +25,7 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    linkHead:"https://twx2.topsports.com.cn/topit-weixin-web/"
   }
 })

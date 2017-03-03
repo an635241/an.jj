@@ -17,14 +17,23 @@ Page({
       title:"",
       brandName:"",
       address:"",
-      products:[]
+      products:[],
+      controls:[{id:1,position:{left:5,top:315},iconPath:'../../images/瞄点.png',clickable:true},{id:2,position:{left:0,top:5},iconPath:'../../images/详情.png',clickable:true}],
+      mapcontent:null,
+      open:false,
+      newtab:null,
   },
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    
     that.getlocation();
-    
+    that.data.mapcontent = wx.createMapContext("map");
+    var window = wx.getSystemInfoSync();
+    var controlss = that.data.controls;
+    controlss[1].position.left=window.windowWidth-35;
+    that.setData({
+      controls:controlss
+    })
   },
   //获取定位信息
   getlocation:function(){
@@ -38,6 +47,8 @@ Page({
       type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
       success: function(res){
         // success
+        console.log(res.latitude);
+        console.log(res.longitude);
         that.setData({
             latitude:res.latitude,
             longitude:res.longitude,
@@ -195,6 +206,58 @@ Page({
     var that = this
     that.setData({
       showModelStatus:false
+    })
+  },
+  controltap(e) {
+    var that = this
+    switch(e.controlId){
+      case 1:
+        //将视野移至定位点
+        that.data.mapcontent.moveToLocation();
+        break;
+      case 2:
+        if(!that.data.open){
+          that.setData({
+            open:true
+          })
+        }else{
+          that.setData({
+            open:false
+          })
+        }
+        
+        break;
+    }
+  },
+  touchstart(e){
+    var that = this
+    that.setData({
+      newtab:e.touches[0].pageX
+    })
+  },
+  touchmove(e){
+    var that = this
+    if(e.touches[0].pageX>that.data.newtab){
+        that.setData({
+          open:false
+        })
+    }
+  },
+  branchtab(res){
+    console.log(res);
+    var lists = wx.getStorageSync('lists');
+    var i = res.currentTarget.id;
+    wx.navigateTo({
+      url: '../branch/branch?title='+lists[i].title+'&brandName='+lists[i].BrandName+'&address='+lists[i].address+'&branchCode='+lists[i].BranchCode,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+         // complete
+      }
     })
   }
 })
