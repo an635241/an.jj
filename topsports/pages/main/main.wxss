@@ -1,5 +1,5 @@
 page{
-    background-color: #f0eff5
+    background-color: #f0eff5;
 }
 .center{
      align-items: center;
@@ -64,4 +64,33 @@ page{
 .open{
     transform: rotate(0deg) scale(1) translate(-75%,0%); 
   -webkit-transform: rotate(0deg) scale(1) translate(-75%,0%); 
+}
+.listopen{
+    animation:myfirst 1s;
+    -webkit-animation:myfirst 1s;
+}
+/*.listclose{
+    animation:mysecond 1s;
+    -webkit-animation:mysecond 1s;
+}*/
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {width:0px;}
+to {width:70%;}
+}
+@keyframes myfirst
+{
+from {width:0px;}
+to {width:70%;}
+}
+
+@-webkit-keyframes mysecond /* Safari and Chrome */
+{
+from {width:70%;}
+to {width:0px;}
+}
+@keyframes mysecond
+{
+from {width:70%;}
+to {width:0px;}
 }
