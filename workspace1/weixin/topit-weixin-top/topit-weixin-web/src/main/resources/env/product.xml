@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<portable-config>
+   <config-file path="WEB-INF/classes/jdbc.properties">
+     <replace key="jdbc_url">jdbc:mysql://192.168.4.220:3306/hrwechat?useUnicode=true&amp;characterEncoding=utf-8</replace>
+     <replace key="jdbc_username">hradmin</replace>
+     <replace key="jdbc_password">hr-top220</replace>
+   </config-file>
+   <config-file path="WEB-INF/classes/common.properties">
+     <replace key="domainStatic">http://wx2.topsports.com.cn/topit-weixin-web</replace>
+     <replace key="weixinmobiledebug">0</replace>
+     <replace key="dataHubUrl">http://172.24.241.79:7001/frdif/n_frdif.asmx</replace>
+     <replace key="userId">user05</replace>
+     <replace key="password">3495754ECA918A56</replace>
+   </config-file>
+</portable-config>

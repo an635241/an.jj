@@ -1,0 +1,52 @@
+.hint{
+   margin: auto;
+   position: absolute;
+   top: 0; 
+   left: 0; 
+   bottom: 0; 
+   right: 0;
+   z-index: 500;
+   width:80px;
+   height:60px;
+   background-color:grey;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   text-align:center;
+   padding-top:20px;
+   font-weight:bold;
+   color:#FFFFFF;
+   filter:alpha(opacity=85); /*IE滤镜，透明度85%*/
+   -moz-opacity:0.85; /*Firefox私有，透明度85%*/
+   opacity:0.85;/*其他，透明度85%*/
+   display:none;
+}
+
+.loader4 {
+   margin: auto;
+   position: absolute;
+   top: 0; 
+   left: 0; 
+   bottom: 0; 
+   right: 0;
+   z-index: 500;
+   width:60px;
+   height:60px;
+   display:inline-block;
+   padding:0px;
+   border-radius:100%;
+   border:5px solid;
+   border-top-color:rgba(0,0,0, 0.5);
+   border-bottom-color:rgba(0,0,0, 0.1);
+   border-left-color:rgba(0,0,0, 0.1);
+   border-right-color:rgba(0,0,0, 0.5);
+   -webkit-animation: loader4 1s ease-in-out infinite;
+   animation: loader4 1s ease-in-out infinite;
+}
+@keyframes loader4 {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(360deg);}
+}
+@-webkit-keyframes loader4 {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(360deg);}
+}

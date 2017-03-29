@@ -1,0 +1,2345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.topsports.weixin.dao2.StoreSalSummaryMapper" >
+  <resultMap id="BaseResultMap" type="com.topsports.weixin.common.model2.StoreSalSummary" >
+    <result column="ORGAN_NEW_NO" property="organNewNo" jdbcType="VARCHAR" />
+    <result column="REGION_NAME" property="regionName" jdbcType="VARCHAR" />
+    <result column="PROVINCE_NAME" property="provinceName" jdbcType="VARCHAR" />
+    <result column="ZONE_NAME" property="zoneName" jdbcType="VARCHAR" />
+    <result column="MANAGING_CITY_NAME" property="managingCityName" jdbcType="VARCHAR" />
+    <result column="CITY_NAME" property="cityName" jdbcType="VARCHAR" />
+    <result column="CITY_LEVEL" property="cityLevel" jdbcType="VARCHAR" />
+    <result column="BRAND_CLASSIFICATION" property="brandClassification" jdbcType="VARCHAR" />
+    <result column="BRAND_ENAME" property="brandEname" jdbcType="VARCHAR" />
+    <result column="BRAND_SECONDARY" property="brandSecondary" jdbcType="VARCHAR" />
+    <result column="SAL_NATURE" property="salNature" jdbcType="VARCHAR" />
+    <result column="ORGAN_NAME" property="organName" jdbcType="VARCHAR" />
+    <result column="STORE_NATURE" property="storeNature" jdbcType="VARCHAR" />
+    <result column="MALL_NAME" property="mallName" jdbcType="VARCHAR" />
+    <result column="BUSINESS_GROUP_NAME" property="businessGroupName" jdbcType="VARCHAR" />
+    <result column="CHANNEL_NAME" property="channelName" jdbcType="VARCHAR" />
+    <result column="STORE_NATURE_SECOND_LEVEL" property="storeNatureSecondLevel" jdbcType="VARCHAR" />
+    <result column="BRAND_RELEGATION" property="brandRelegation" jdbcType="VARCHAR" />
+    <result column="BUSINESS_MODE" property="businessMode" jdbcType="VARCHAR" />
+    <result column="BUSINESS_MODE1" property="businessMode1" jdbcType="VARCHAR" />
+    <result column="IF_SAME_RATIO" property="ifSameRatio" jdbcType="VARCHAR" />
+    <result column="BUSINESS_CONDITION" property="businessCondition" jdbcType="VARCHAR" />
+    <result column="CMAN_ADDRESS" property="cmanAddress" jdbcType="VARCHAR" />
+    <result column="STORE_AREA" property="storeArea" jdbcType="DECIMAL" />
+    <result column="OPENDT" property="opendt" jdbcType="VARCHAR" />
+    <result column="CLOSEDT" property="closedt" jdbcType="VARCHAR" />
+    <result column="OPENDT1" property="opendt1" jdbcType="VARCHAR" />
+    <result column="CLOSEDT1" property="closedt1" jdbcType="VARCHAR" />
+    <result column="STORE_NUMBER_0509" property="storeNumber0509" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0512" property="storeNumber0512" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0603" property="storeNumber0603" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0606" property="storeNumber0606" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0609" property="storeNumber0609" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0612" property="storeNumber0612" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_ADD_06" property="storeNumberAdd06" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0703" property="storeNumber0703" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0706" property="storeNumber0706" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0709" property="storeNumber0709" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0712" property="storeNumber0712" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0803" property="storeNumber0803" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0806" property="storeNumber0806" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0809" property="storeNumber0809" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0812" property="storeNumber0812" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0903" property="storeNumber0903" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0906" property="storeNumber0906" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0909" property="storeNumber0909" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_0912" property="storeNumber0912" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1003" property="storeNumber1003" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1006" property="storeNumber1006" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1009" property="storeNumber1009" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1012" property="storeNumber1012" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1103" property="storeNumber1103" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1106" property="storeNumber1106" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1109" property="storeNumber1109" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1112" property="storeNumber1112" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1203" property="storeNumber1203" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1206" property="storeNumber1206" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1209" property="storeNumber1209" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1212" property="storeNumber1212" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1303" property="storeNumber1303" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1306" property="storeNumber1306" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1309" property="storeNumber1309" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1312" property="storeNumber1312" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1402" property="storeNumber1402" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1405" property="storeNumber1405" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1406" property="storeNumber1406" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1408" property="storeNumber1408" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1411" property="storeNumber1411" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1412" property="storeNumber1412" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1501" property="storeNumber1501" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1502" property="storeNumber1502" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1503" property="storeNumber1503" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1504" property="storeNumber1504" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1505" property="storeNumber1505" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1506" property="storeNumber1506" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1507" property="storeNumber1507" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1508" property="storeNumber1508" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1509" property="storeNumber1509" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1510" property="storeNumber1510" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1511" property="storeNumber1511" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1512" property="storeNumber1512" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1601" property="storeNumber1601" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1602" property="storeNumber1602" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1603" property="storeNumber1603" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1604" property="storeNumber1604" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1605" property="storeNumber1605" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1606" property="storeNumber1606" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1607" property="storeNumber1607" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1608" property="storeNumber1608" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1609" property="storeNumber1609" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1610" property="storeNumber1610" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1611" property="storeNumber1611" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1612" property="storeNumber1612" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1701" property="storeNumber1701" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1702" property="storeNumber1702" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1703" property="storeNumber1703" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1704" property="storeNumber1704" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1705" property="storeNumber1705" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1706" property="storeNumber1706" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1707" property="storeNumber1707" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1708" property="storeNumber1708" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1709" property="storeNumber1709" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1710" property="storeNumber1710" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1711" property="storeNumber1711" jdbcType="DECIMAL" />
+    <result column="STORE_NUMBER_1712" property="storeNumber1712" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0501" property="actualSalAmt0501" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0502" property="actualSalAmt0502" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0503" property="actualSalAmt0503" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0504" property="actualSalAmt0504" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0505" property="actualSalAmt0505" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0506" property="actualSalAmt0506" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0507" property="actualSalAmt0507" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0508" property="actualSalAmt0508" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0509" property="actualSalAmt0509" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0510" property="actualSalAmt0510" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0511" property="actualSalAmt0511" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0512" property="actualSalAmt0512" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_05" property="actualSalAmtTotal05" jdbcType="DECIMAL" />
+    <result column="MONTH_05" property="month05" jdbcType="VARCHAR" />
+    <result column="ACTUAL_SAL_AMT_0601" property="actualSalAmt0601" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0602" property="actualSalAmt0602" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0603" property="actualSalAmt0603" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0604" property="actualSalAmt0604" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0605" property="actualSalAmt0605" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0606" property="actualSalAmt0606" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0607" property="actualSalAmt0607" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0608" property="actualSalAmt0608" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0609" property="actualSalAmt0609" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0610" property="actualSalAmt0610" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0611" property="actualSalAmt0611" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0612" property="actualSalAmt0612" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_06" property="actualSalAmtTotal06" jdbcType="DECIMAL" />
+    <result column="MONTH_06" property="month06" jdbcType="VARCHAR" />
+    <result column="ACTUAL_SAL_AMT_0701" property="actualSalAmt0701" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0702" property="actualSalAmt0702" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0703" property="actualSalAmt0703" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0704" property="actualSalAmt0704" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0705" property="actualSalAmt0705" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0706" property="actualSalAmt0706" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0707" property="actualSalAmt0707" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0708" property="actualSalAmt0708" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0709" property="actualSalAmt0709" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0710" property="actualSalAmt0710" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0711" property="actualSalAmt0711" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0712" property="actualSalAmt0712" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_07" property="actualSalAmtTotal07" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0801" property="actualSalAmt0801" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0802" property="actualSalAmt0802" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0803" property="actualSalAmt0803" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0804" property="actualSalAmt0804" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0805" property="actualSalAmt0805" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0806" property="actualSalAmt0806" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0807" property="actualSalAmt0807" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0808" property="actualSalAmt0808" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0809" property="actualSalAmt0809" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0810" property="actualSalAmt0810" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0811" property="actualSalAmt0811" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0812" property="actualSalAmt0812" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_08" property="actualSalAmtTotal08" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0901" property="actualSalAmt0901" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0902" property="actualSalAmt0902" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0903" property="actualSalAmt0903" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0904" property="actualSalAmt0904" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0905" property="actualSalAmt0905" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0906" property="actualSalAmt0906" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0907" property="actualSalAmt0907" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0908" property="actualSalAmt0908" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0909" property="actualSalAmt0909" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0910" property="actualSalAmt0910" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0911" property="actualSalAmt0911" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_0912" property="actualSalAmt0912" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_09" property="actualSalAmtTotal09" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1001" property="actualSalAmt1001" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1002" property="actualSalAmt1002" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1003" property="actualSalAmt1003" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1004" property="actualSalAmt1004" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1005" property="actualSalAmt1005" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1006" property="actualSalAmt1006" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1007" property="actualSalAmt1007" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1008" property="actualSalAmt1008" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1009" property="actualSalAmt1009" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1010" property="actualSalAmt1010" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1011" property="actualSalAmt1011" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1012" property="actualSalAmt1012" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_10" property="actualSalAmtTotal10" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1101" property="actualSalAmt1101" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1102" property="actualSalAmt1102" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1103" property="actualSalAmt1103" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1104" property="actualSalAmt1104" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1105" property="actualSalAmt1105" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1106" property="actualSalAmt1106" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1107" property="actualSalAmt1107" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1108" property="actualSalAmt1108" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1109" property="actualSalAmt1109" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1110" property="actualSalAmt1110" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1111" property="actualSalAmt1111" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1112" property="actualSalAmt1112" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_11" property="actualSalAmtTotal11" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1201" property="actualSalAmt1201" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1202" property="actualSalAmt1202" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1203" property="actualSalAmt1203" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1204" property="actualSalAmt1204" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1205" property="actualSalAmt1205" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1206" property="actualSalAmt1206" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1207" property="actualSalAmt1207" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1208" property="actualSalAmt1208" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1209" property="actualSalAmt1209" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1210" property="actualSalAmt1210" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1211" property="actualSalAmt1211" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1212" property="actualSalAmt1212" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_12" property="actualSalAmtTotal12" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1301" property="actualSalAmt1301" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1302" property="actualSalAmt1302" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1303" property="actualSalAmt1303" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1304" property="actualSalAmt1304" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1305" property="actualSalAmt1305" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1306" property="actualSalAmt1306" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1307" property="actualSalAmt1307" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1308" property="actualSalAmt1308" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1309" property="actualSalAmt1309" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1310" property="actualSalAmt1310" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1311" property="actualSalAmt1311" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1312" property="actualSalAmt1312" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_13" property="actualSalAmtTotal13" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1401" property="actualSalAmt1401" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1402" property="actualSalAmt1402" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1403" property="actualSalAmt1403" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1404" property="actualSalAmt1404" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1405" property="actualSalAmt1405" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1406" property="actualSalAmt1406" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1407" property="actualSalAmt1407" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1408" property="actualSalAmt1408" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1409" property="actualSalAmt1409" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1410" property="actualSalAmt1410" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1411" property="actualSalAmt1411" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1412" property="actualSalAmt1412" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_14" property="actualSalAmtTotal14" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1501" property="actualSalAmt1501" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1502" property="actualSalAmt1502" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1503" property="actualSalAmt1503" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1504" property="actualSalAmt1504" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1505" property="actualSalAmt1505" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1506" property="actualSalAmt1506" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1507" property="actualSalAmt1507" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1508" property="actualSalAmt1508" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1509" property="actualSalAmt1509" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1510" property="actualSalAmt1510" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1511" property="actualSalAmt1511" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1512" property="actualSalAmt1512" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1601" property="actualSalAmt1601" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1602" property="actualSalAmt1602" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1603" property="actualSalAmt1603" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1604" property="actualSalAmt1604" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1605" property="actualSalAmt1605" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1606" property="actualSalAmt1606" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1607" property="actualSalAmt1607" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1608" property="actualSalAmt1608" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1609" property="actualSalAmt1609" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1610" property="actualSalAmt1610" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1611" property="actualSalAmt1611" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1612" property="actualSalAmt1612" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_16" property="actualSalAmtTotal16" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1701" property="predictSalAmt1701" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1702" property="predictSalAmt1702" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1703" property="predictSalAmt1703" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1704" property="predictSalAmt1704" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1705" property="predictSalAmt1705" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1706" property="predictSalAmt1706" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1707" property="predictSalAmt1707" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1708" property="predictSalAmt1708" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1709" property="predictSalAmt1709" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1710" property="predictSalAmt1710" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1711" property="predictSalAmt1711" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1712" property="predictSalAmt1712" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_17" property="predictSalAmt17" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1801" property="predictSalAmt1801" jdbcType="DECIMAL" />
+    <result column="PREDICT_SAL_AMT_1802" property="predictSalAmt1802" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1701" property="actualSalAmt1701" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1702" property="actualSalAmt1702" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1703" property="actualSalAmt1703" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1704" property="actualSalAmt1704" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1705" property="actualSalAmt1705" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1706" property="actualSalAmt1706" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1707" property="actualSalAmt1707" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1708" property="actualSalAmt1708" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1709" property="actualSalAmt1709" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1710" property="actualSalAmt1710" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1711" property="actualSalAmt1711" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_1712" property="actualSalAmt1712" jdbcType="DECIMAL" />
+    <result column="ACTUAL_SAL_AMT_TOTAL_17" property="actualSalAmtTotal17" jdbcType="DECIMAL" />
+    <result column="SAME_MONTH" property="sameMonth" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="MAP_STORE" property="mapStore" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="null!=params.queryCondition and ''!=params.queryCondition" >
+        ${params.queryCondition}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    ORGAN_NEW_NO, REGION_NAME, PROVINCE_NAME, ZONE_NAME, MANAGING_CITY_NAME, CITY_NAME, 
+    CITY_LEVEL, BRAND_CLASSIFICATION, BRAND_ENAME, BRAND_SECONDARY, SAL_NATURE, ORGAN_NAME, 
+    STORE_NATURE, MALL_NAME, BUSINESS_GROUP_NAME, CHANNEL_NAME, STORE_NATURE_SECOND_LEVEL, 
+    BRAND_RELEGATION, BUSINESS_MODE, BUSINESS_MODE1, IF_SAME_RATIO, BUSINESS_CONDITION, 
+    CMAN_ADDRESS, STORE_AREA, OPENDT, CLOSEDT, OPENDT1, CLOSEDT1, STORE_NUMBER_0509, 
+    STORE_NUMBER_0512, STORE_NUMBER_0603, STORE_NUMBER_0606, STORE_NUMBER_0609, STORE_NUMBER_0612, 
+    STORE_NUMBER_ADD_06, STORE_NUMBER_0703, STORE_NUMBER_0706, STORE_NUMBER_0709, STORE_NUMBER_0712, 
+    STORE_NUMBER_0803, STORE_NUMBER_0806, STORE_NUMBER_0809, STORE_NUMBER_0812, STORE_NUMBER_0903, 
+    STORE_NUMBER_0906, STORE_NUMBER_0909, STORE_NUMBER_0912, STORE_NUMBER_1003, STORE_NUMBER_1006, 
+    STORE_NUMBER_1009, STORE_NUMBER_1012, STORE_NUMBER_1103, STORE_NUMBER_1106, STORE_NUMBER_1109, 
+    STORE_NUMBER_1112, STORE_NUMBER_1203, STORE_NUMBER_1206, STORE_NUMBER_1209, STORE_NUMBER_1212, 
+    STORE_NUMBER_1303, STORE_NUMBER_1306, STORE_NUMBER_1309, STORE_NUMBER_1312, STORE_NUMBER_1402, 
+    STORE_NUMBER_1405, STORE_NUMBER_1406, STORE_NUMBER_1408, STORE_NUMBER_1411, STORE_NUMBER_1412, 
+    STORE_NUMBER_1501, STORE_NUMBER_1502, STORE_NUMBER_1503, STORE_NUMBER_1504, STORE_NUMBER_1505, 
+    STORE_NUMBER_1506, STORE_NUMBER_1507, STORE_NUMBER_1508, STORE_NUMBER_1509, STORE_NUMBER_1510, 
+    STORE_NUMBER_1511, STORE_NUMBER_1512, STORE_NUMBER_1601, STORE_NUMBER_1602, STORE_NUMBER_1603, 
+    STORE_NUMBER_1604, STORE_NUMBER_1605, STORE_NUMBER_1606, STORE_NUMBER_1607, STORE_NUMBER_1608, 
+    STORE_NUMBER_1609, STORE_NUMBER_1610, STORE_NUMBER_1611, STORE_NUMBER_1612, STORE_NUMBER_1701, 
+    STORE_NUMBER_1702, STORE_NUMBER_1703, STORE_NUMBER_1704, STORE_NUMBER_1705, STORE_NUMBER_1706, 
+    STORE_NUMBER_1707, STORE_NUMBER_1708, STORE_NUMBER_1709, STORE_NUMBER_1710, STORE_NUMBER_1711, 
+    STORE_NUMBER_1712, ACTUAL_SAL_AMT_0501, ACTUAL_SAL_AMT_0502, ACTUAL_SAL_AMT_0503, 
+    ACTUAL_SAL_AMT_0504, ACTUAL_SAL_AMT_0505, ACTUAL_SAL_AMT_0506, ACTUAL_SAL_AMT_0507, 
+    ACTUAL_SAL_AMT_0508, ACTUAL_SAL_AMT_0509, ACTUAL_SAL_AMT_0510, ACTUAL_SAL_AMT_0511, 
+    ACTUAL_SAL_AMT_0512, ACTUAL_SAL_AMT_TOTAL_05, MONTH_05, ACTUAL_SAL_AMT_0601, ACTUAL_SAL_AMT_0602, 
+    ACTUAL_SAL_AMT_0603, ACTUAL_SAL_AMT_0604, ACTUAL_SAL_AMT_0605, ACTUAL_SAL_AMT_0606, 
+    ACTUAL_SAL_AMT_0607, ACTUAL_SAL_AMT_0608, ACTUAL_SAL_AMT_0609, ACTUAL_SAL_AMT_0610, 
+    ACTUAL_SAL_AMT_0611, ACTUAL_SAL_AMT_0612, ACTUAL_SAL_AMT_TOTAL_06, MONTH_06, ACTUAL_SAL_AMT_0701, 
+    ACTUAL_SAL_AMT_0702, ACTUAL_SAL_AMT_0703, ACTUAL_SAL_AMT_0704, ACTUAL_SAL_AMT_0705, 
+    ACTUAL_SAL_AMT_0706, ACTUAL_SAL_AMT_0707, ACTUAL_SAL_AMT_0708, ACTUAL_SAL_AMT_0709, 
+    ACTUAL_SAL_AMT_0710, ACTUAL_SAL_AMT_0711, ACTUAL_SAL_AMT_0712, ACTUAL_SAL_AMT_TOTAL_07, 
+    ACTUAL_SAL_AMT_0801, ACTUAL_SAL_AMT_0802, ACTUAL_SAL_AMT_0803, ACTUAL_SAL_AMT_0804, 
+    ACTUAL_SAL_AMT_0805, ACTUAL_SAL_AMT_0806, ACTUAL_SAL_AMT_0807, ACTUAL_SAL_AMT_0808, 
+    ACTUAL_SAL_AMT_0809, ACTUAL_SAL_AMT_0810, ACTUAL_SAL_AMT_0811, ACTUAL_SAL_AMT_0812, 
+    ACTUAL_SAL_AMT_TOTAL_08, ACTUAL_SAL_AMT_0901, ACTUAL_SAL_AMT_0902, ACTUAL_SAL_AMT_0903, 
+    ACTUAL_SAL_AMT_0904, ACTUAL_SAL_AMT_0905, ACTUAL_SAL_AMT_0906, ACTUAL_SAL_AMT_0907, 
+    ACTUAL_SAL_AMT_0908, ACTUAL_SAL_AMT_0909, ACTUAL_SAL_AMT_0910, ACTUAL_SAL_AMT_0911, 
+    ACTUAL_SAL_AMT_0912, ACTUAL_SAL_AMT_TOTAL_09, ACTUAL_SAL_AMT_1001, ACTUAL_SAL_AMT_1002, 
+    ACTUAL_SAL_AMT_1003, ACTUAL_SAL_AMT_1004, ACTUAL_SAL_AMT_1005, ACTUAL_SAL_AMT_1006, 
+    ACTUAL_SAL_AMT_1007, ACTUAL_SAL_AMT_1008, ACTUAL_SAL_AMT_1009, ACTUAL_SAL_AMT_1010, 
+    ACTUAL_SAL_AMT_1011, ACTUAL_SAL_AMT_1012, ACTUAL_SAL_AMT_TOTAL_10, ACTUAL_SAL_AMT_1101, 
+    ACTUAL_SAL_AMT_1102, ACTUAL_SAL_AMT_1103, ACTUAL_SAL_AMT_1104, ACTUAL_SAL_AMT_1105, 
+    ACTUAL_SAL_AMT_1106, ACTUAL_SAL_AMT_1107, ACTUAL_SAL_AMT_1108, ACTUAL_SAL_AMT_1109, 
+    ACTUAL_SAL_AMT_1110, ACTUAL_SAL_AMT_1111, ACTUAL_SAL_AMT_1112, ACTUAL_SAL_AMT_TOTAL_11, 
+    ACTUAL_SAL_AMT_1201, ACTUAL_SAL_AMT_1202, ACTUAL_SAL_AMT_1203, ACTUAL_SAL_AMT_1204, 
+    ACTUAL_SAL_AMT_1205, ACTUAL_SAL_AMT_1206, ACTUAL_SAL_AMT_1207, ACTUAL_SAL_AMT_1208, 
+    ACTUAL_SAL_AMT_1209, ACTUAL_SAL_AMT_1210, ACTUAL_SAL_AMT_1211, ACTUAL_SAL_AMT_1212, 
+    ACTUAL_SAL_AMT_TOTAL_12, ACTUAL_SAL_AMT_1301, ACTUAL_SAL_AMT_1302, ACTUAL_SAL_AMT_1303, 
+    ACTUAL_SAL_AMT_1304, ACTUAL_SAL_AMT_1305, ACTUAL_SAL_AMT_1306, ACTUAL_SAL_AMT_1307, 
+    ACTUAL_SAL_AMT_1308, ACTUAL_SAL_AMT_1309, ACTUAL_SAL_AMT_1310, ACTUAL_SAL_AMT_1311, 
+    ACTUAL_SAL_AMT_1312, ACTUAL_SAL_AMT_TOTAL_13, ACTUAL_SAL_AMT_1401, ACTUAL_SAL_AMT_1402, 
+    ACTUAL_SAL_AMT_1403, ACTUAL_SAL_AMT_1404, ACTUAL_SAL_AMT_1405, ACTUAL_SAL_AMT_1406, 
+    ACTUAL_SAL_AMT_1407, ACTUAL_SAL_AMT_1408, ACTUAL_SAL_AMT_1409, ACTUAL_SAL_AMT_1410, 
+    ACTUAL_SAL_AMT_1411, ACTUAL_SAL_AMT_1412, ACTUAL_SAL_AMT_TOTAL_14, ACTUAL_SAL_AMT_1501, 
+    ACTUAL_SAL_AMT_1502, ACTUAL_SAL_AMT_1503, ACTUAL_SAL_AMT_1504, ACTUAL_SAL_AMT_1505, 
+    ACTUAL_SAL_AMT_1506, ACTUAL_SAL_AMT_1507, ACTUAL_SAL_AMT_1508, ACTUAL_SAL_AMT_1509, 
+    ACTUAL_SAL_AMT_1510, ACTUAL_SAL_AMT_1511, ACTUAL_SAL_AMT_1512, ACTUAL_SAL_AMT_1601, 
+    ACTUAL_SAL_AMT_1602, ACTUAL_SAL_AMT_1603, ACTUAL_SAL_AMT_1604, ACTUAL_SAL_AMT_1605, 
+    ACTUAL_SAL_AMT_1606, ACTUAL_SAL_AMT_1607, ACTUAL_SAL_AMT_1608, ACTUAL_SAL_AMT_1609, 
+    ACTUAL_SAL_AMT_1610, ACTUAL_SAL_AMT_1611, ACTUAL_SAL_AMT_1612, ACTUAL_SAL_AMT_TOTAL_16, 
+    PREDICT_SAL_AMT_1701, PREDICT_SAL_AMT_1702, PREDICT_SAL_AMT_1703, PREDICT_SAL_AMT_1704, 
+    PREDICT_SAL_AMT_1705, PREDICT_SAL_AMT_1706, PREDICT_SAL_AMT_1707, PREDICT_SAL_AMT_1708, 
+    PREDICT_SAL_AMT_1709, PREDICT_SAL_AMT_1710, PREDICT_SAL_AMT_1711, PREDICT_SAL_AMT_1712, 
+    PREDICT_SAL_AMT_17, PREDICT_SAL_AMT_1801, PREDICT_SAL_AMT_1802, ACTUAL_SAL_AMT_1701, 
+    ACTUAL_SAL_AMT_1702, ACTUAL_SAL_AMT_1703, ACTUAL_SAL_AMT_1704, ACTUAL_SAL_AMT_1705, 
+    ACTUAL_SAL_AMT_1706, ACTUAL_SAL_AMT_1707, ACTUAL_SAL_AMT_1708, ACTUAL_SAL_AMT_1709, 
+    ACTUAL_SAL_AMT_1710, ACTUAL_SAL_AMT_1711, ACTUAL_SAL_AMT_1712, ACTUAL_SAL_AMT_TOTAL_17, 
+    SAME_MONTH, REMARK, MAP_STORE
+     FROM STORE_SAL_SUMMARY WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <insert id="insert" parameterType="com.topsports.weixin.common.model2.StoreSalSummary" >
+    INSERT INTO STORE_SAL_SUMMARY (ORGAN_NEW_NO, REGION_NAME, PROVINCE_NAME, 
+      ZONE_NAME, MANAGING_CITY_NAME, CITY_NAME, 
+      CITY_LEVEL, BRAND_CLASSIFICATION, BRAND_ENAME, 
+      BRAND_SECONDARY, SAL_NATURE, ORGAN_NAME, 
+      STORE_NATURE, MALL_NAME, BUSINESS_GROUP_NAME, 
+      CHANNEL_NAME, STORE_NATURE_SECOND_LEVEL, BRAND_RELEGATION, 
+      BUSINESS_MODE, BUSINESS_MODE1, IF_SAME_RATIO, 
+      BUSINESS_CONDITION, CMAN_ADDRESS, STORE_AREA, 
+      OPENDT, CLOSEDT, OPENDT1, 
+      CLOSEDT1, STORE_NUMBER_0509, STORE_NUMBER_0512, 
+      STORE_NUMBER_0603, STORE_NUMBER_0606, STORE_NUMBER_0609, 
+      STORE_NUMBER_0612, STORE_NUMBER_ADD_06, STORE_NUMBER_0703, 
+      STORE_NUMBER_0706, STORE_NUMBER_0709, STORE_NUMBER_0712, 
+      STORE_NUMBER_0803, STORE_NUMBER_0806, STORE_NUMBER_0809, 
+      STORE_NUMBER_0812, STORE_NUMBER_0903, STORE_NUMBER_0906, 
+      STORE_NUMBER_0909, STORE_NUMBER_0912, STORE_NUMBER_1003, 
+      STORE_NUMBER_1006, STORE_NUMBER_1009, STORE_NUMBER_1012, 
+      STORE_NUMBER_1103, STORE_NUMBER_1106, STORE_NUMBER_1109, 
+      STORE_NUMBER_1112, STORE_NUMBER_1203, STORE_NUMBER_1206, 
+      STORE_NUMBER_1209, STORE_NUMBER_1212, STORE_NUMBER_1303, 
+      STORE_NUMBER_1306, STORE_NUMBER_1309, STORE_NUMBER_1312, 
+      STORE_NUMBER_1402, STORE_NUMBER_1405, STORE_NUMBER_1406, 
+      STORE_NUMBER_1408, STORE_NUMBER_1411, STORE_NUMBER_1412, 
+      STORE_NUMBER_1501, STORE_NUMBER_1502, STORE_NUMBER_1503, 
+      STORE_NUMBER_1504, STORE_NUMBER_1505, STORE_NUMBER_1506, 
+      STORE_NUMBER_1507, STORE_NUMBER_1508, STORE_NUMBER_1509, 
+      STORE_NUMBER_1510, STORE_NUMBER_1511, STORE_NUMBER_1512, 
+      STORE_NUMBER_1601, STORE_NUMBER_1602, STORE_NUMBER_1603, 
+      STORE_NUMBER_1604, STORE_NUMBER_1605, STORE_NUMBER_1606, 
+      STORE_NUMBER_1607, STORE_NUMBER_1608, STORE_NUMBER_1609, 
+      STORE_NUMBER_1610, STORE_NUMBER_1611, STORE_NUMBER_1612, 
+      STORE_NUMBER_1701, STORE_NUMBER_1702, STORE_NUMBER_1703, 
+      STORE_NUMBER_1704, STORE_NUMBER_1705, STORE_NUMBER_1706, 
+      STORE_NUMBER_1707, STORE_NUMBER_1708, STORE_NUMBER_1709, 
+      STORE_NUMBER_1710, STORE_NUMBER_1711, STORE_NUMBER_1712, 
+      ACTUAL_SAL_AMT_0501, ACTUAL_SAL_AMT_0502, ACTUAL_SAL_AMT_0503, 
+      ACTUAL_SAL_AMT_0504, ACTUAL_SAL_AMT_0505, ACTUAL_SAL_AMT_0506, 
+      ACTUAL_SAL_AMT_0507, ACTUAL_SAL_AMT_0508, ACTUAL_SAL_AMT_0509, 
+      ACTUAL_SAL_AMT_0510, ACTUAL_SAL_AMT_0511, ACTUAL_SAL_AMT_0512, 
+      ACTUAL_SAL_AMT_TOTAL_05, MONTH_05, ACTUAL_SAL_AMT_0601, 
+      ACTUAL_SAL_AMT_0602, ACTUAL_SAL_AMT_0603, ACTUAL_SAL_AMT_0604, 
+      ACTUAL_SAL_AMT_0605, ACTUAL_SAL_AMT_0606, ACTUAL_SAL_AMT_0607, 
+      ACTUAL_SAL_AMT_0608, ACTUAL_SAL_AMT_0609, ACTUAL_SAL_AMT_0610, 
+      ACTUAL_SAL_AMT_0611, ACTUAL_SAL_AMT_0612, ACTUAL_SAL_AMT_TOTAL_06, 
+      MONTH_06, ACTUAL_SAL_AMT_0701, ACTUAL_SAL_AMT_0702, 
+      ACTUAL_SAL_AMT_0703, ACTUAL_SAL_AMT_0704, ACTUAL_SAL_AMT_0705, 
+      ACTUAL_SAL_AMT_0706, ACTUAL_SAL_AMT_0707, ACTUAL_SAL_AMT_0708, 
+      ACTUAL_SAL_AMT_0709, ACTUAL_SAL_AMT_0710, ACTUAL_SAL_AMT_0711, 
+      ACTUAL_SAL_AMT_0712, ACTUAL_SAL_AMT_TOTAL_07, 
+      ACTUAL_SAL_AMT_0801, ACTUAL_SAL_AMT_0802, ACTUAL_SAL_AMT_0803, 
+      ACTUAL_SAL_AMT_0804, ACTUAL_SAL_AMT_0805, ACTUAL_SAL_AMT_0806, 
+      ACTUAL_SAL_AMT_0807, ACTUAL_SAL_AMT_0808, ACTUAL_SAL_AMT_0809, 
+      ACTUAL_SAL_AMT_0810, ACTUAL_SAL_AMT_0811, ACTUAL_SAL_AMT_0812, 
+      ACTUAL_SAL_AMT_TOTAL_08, ACTUAL_SAL_AMT_0901, 
+      ACTUAL_SAL_AMT_0902, ACTUAL_SAL_AMT_0903, ACTUAL_SAL_AMT_0904, 
+      ACTUAL_SAL_AMT_0905, ACTUAL_SAL_AMT_0906, ACTUAL_SAL_AMT_0907, 
+      ACTUAL_SAL_AMT_0908, ACTUAL_SAL_AMT_0909, ACTUAL_SAL_AMT_0910, 
+      ACTUAL_SAL_AMT_0911, ACTUAL_SAL_AMT_0912, ACTUAL_SAL_AMT_TOTAL_09, 
+      ACTUAL_SAL_AMT_1001, ACTUAL_SAL_AMT_1002, ACTUAL_SAL_AMT_1003, 
+      ACTUAL_SAL_AMT_1004, ACTUAL_SAL_AMT_1005, ACTUAL_SAL_AMT_1006, 
+      ACTUAL_SAL_AMT_1007, ACTUAL_SAL_AMT_1008, ACTUAL_SAL_AMT_1009, 
+      ACTUAL_SAL_AMT_1010, ACTUAL_SAL_AMT_1011, ACTUAL_SAL_AMT_1012, 
+      ACTUAL_SAL_AMT_TOTAL_10, ACTUAL_SAL_AMT_1101, 
+      ACTUAL_SAL_AMT_1102, ACTUAL_SAL_AMT_1103, ACTUAL_SAL_AMT_1104, 
+      ACTUAL_SAL_AMT_1105, ACTUAL_SAL_AMT_1106, ACTUAL_SAL_AMT_1107, 
+      ACTUAL_SAL_AMT_1108, ACTUAL_SAL_AMT_1109, ACTUAL_SAL_AMT_1110, 
+      ACTUAL_SAL_AMT_1111, ACTUAL_SAL_AMT_1112, ACTUAL_SAL_AMT_TOTAL_11, 
+      ACTUAL_SAL_AMT_1201, ACTUAL_SAL_AMT_1202, ACTUAL_SAL_AMT_1203, 
+      ACTUAL_SAL_AMT_1204, ACTUAL_SAL_AMT_1205, ACTUAL_SAL_AMT_1206, 
+      ACTUAL_SAL_AMT_1207, ACTUAL_SAL_AMT_1208, ACTUAL_SAL_AMT_1209, 
+      ACTUAL_SAL_AMT_1210, ACTUAL_SAL_AMT_1211, ACTUAL_SAL_AMT_1212, 
+      ACTUAL_SAL_AMT_TOTAL_12, ACTUAL_SAL_AMT_1301, 
+      ACTUAL_SAL_AMT_1302, ACTUAL_SAL_AMT_1303, ACTUAL_SAL_AMT_1304, 
+      ACTUAL_SAL_AMT_1305, ACTUAL_SAL_AMT_1306, ACTUAL_SAL_AMT_1307, 
+      ACTUAL_SAL_AMT_1308, ACTUAL_SAL_AMT_1309, ACTUAL_SAL_AMT_1310, 
+      ACTUAL_SAL_AMT_1311, ACTUAL_SAL_AMT_1312, ACTUAL_SAL_AMT_TOTAL_13, 
+      ACTUAL_SAL_AMT_1401, ACTUAL_SAL_AMT_1402, ACTUAL_SAL_AMT_1403, 
+      ACTUAL_SAL_AMT_1404, ACTUAL_SAL_AMT_1405, ACTUAL_SAL_AMT_1406, 
+      ACTUAL_SAL_AMT_1407, ACTUAL_SAL_AMT_1408, ACTUAL_SAL_AMT_1409, 
+      ACTUAL_SAL_AMT_1410, ACTUAL_SAL_AMT_1411, ACTUAL_SAL_AMT_1412, 
+      ACTUAL_SAL_AMT_TOTAL_14, ACTUAL_SAL_AMT_1501, 
+      ACTUAL_SAL_AMT_1502, ACTUAL_SAL_AMT_1503, ACTUAL_SAL_AMT_1504, 
+      ACTUAL_SAL_AMT_1505, ACTUAL_SAL_AMT_1506, ACTUAL_SAL_AMT_1507, 
+      ACTUAL_SAL_AMT_1508, ACTUAL_SAL_AMT_1509, ACTUAL_SAL_AMT_1510, 
+      ACTUAL_SAL_AMT_1511, ACTUAL_SAL_AMT_1512, ACTUAL_SAL_AMT_1601, 
+      ACTUAL_SAL_AMT_1602, ACTUAL_SAL_AMT_1603, ACTUAL_SAL_AMT_1604, 
+      ACTUAL_SAL_AMT_1605, ACTUAL_SAL_AMT_1606, ACTUAL_SAL_AMT_1607, 
+      ACTUAL_SAL_AMT_1608, ACTUAL_SAL_AMT_1609, ACTUAL_SAL_AMT_1610, 
+      ACTUAL_SAL_AMT_1611, ACTUAL_SAL_AMT_1612, ACTUAL_SAL_AMT_TOTAL_16, 
+      PREDICT_SAL_AMT_1701, PREDICT_SAL_AMT_1702, PREDICT_SAL_AMT_1703, 
+      PREDICT_SAL_AMT_1704, PREDICT_SAL_AMT_1705, PREDICT_SAL_AMT_1706, 
+      PREDICT_SAL_AMT_1707, PREDICT_SAL_AMT_1708, PREDICT_SAL_AMT_1709, 
+      PREDICT_SAL_AMT_1710, PREDICT_SAL_AMT_1711, PREDICT_SAL_AMT_1712, 
+      PREDICT_SAL_AMT_17, PREDICT_SAL_AMT_1801, PREDICT_SAL_AMT_1802, 
+      ACTUAL_SAL_AMT_1701, ACTUAL_SAL_AMT_1702, ACTUAL_SAL_AMT_1703, 
+      ACTUAL_SAL_AMT_1704, ACTUAL_SAL_AMT_1705, ACTUAL_SAL_AMT_1706, 
+      ACTUAL_SAL_AMT_1707, ACTUAL_SAL_AMT_1708, ACTUAL_SAL_AMT_1709, 
+      ACTUAL_SAL_AMT_1710, ACTUAL_SAL_AMT_1711, ACTUAL_SAL_AMT_1712, 
+      ACTUAL_SAL_AMT_TOTAL_17, SAME_MONTH, REMARK, 
+      MAP_STORE)
+    VALUES (#{organNewNo,jdbcType=VARCHAR}, #{regionName,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, 
+      #{zoneName,jdbcType=VARCHAR}, #{managingCityName,jdbcType=VARCHAR}, #{cityName,jdbcType=VARCHAR}, 
+      #{cityLevel,jdbcType=VARCHAR}, #{brandClassification,jdbcType=VARCHAR}, #{brandEname,jdbcType=VARCHAR}, 
+      #{brandSecondary,jdbcType=VARCHAR}, #{salNature,jdbcType=VARCHAR}, #{organName,jdbcType=VARCHAR}, 
+      #{storeNature,jdbcType=VARCHAR}, #{mallName,jdbcType=VARCHAR}, #{businessGroupName,jdbcType=VARCHAR}, 
+      #{channelName,jdbcType=VARCHAR}, #{storeNatureSecondLevel,jdbcType=VARCHAR}, #{brandRelegation,jdbcType=VARCHAR}, 
+      #{businessMode,jdbcType=VARCHAR}, #{businessMode1,jdbcType=VARCHAR}, #{ifSameRatio,jdbcType=VARCHAR}, 
+      #{businessCondition,jdbcType=VARCHAR}, #{cmanAddress,jdbcType=VARCHAR}, #{storeArea,jdbcType=DECIMAL}, 
+      #{opendt,jdbcType=VARCHAR}, #{closedt,jdbcType=VARCHAR}, #{opendt1,jdbcType=VARCHAR}, 
+      #{closedt1,jdbcType=VARCHAR}, #{storeNumber0509,jdbcType=DECIMAL}, #{storeNumber0512,jdbcType=DECIMAL}, 
+      #{storeNumber0603,jdbcType=DECIMAL}, #{storeNumber0606,jdbcType=DECIMAL}, #{storeNumber0609,jdbcType=DECIMAL}, 
+      #{storeNumber0612,jdbcType=DECIMAL}, #{storeNumberAdd06,jdbcType=DECIMAL}, #{storeNumber0703,jdbcType=DECIMAL}, 
+      #{storeNumber0706,jdbcType=DECIMAL}, #{storeNumber0709,jdbcType=DECIMAL}, #{storeNumber0712,jdbcType=DECIMAL}, 
+      #{storeNumber0803,jdbcType=DECIMAL}, #{storeNumber0806,jdbcType=DECIMAL}, #{storeNumber0809,jdbcType=DECIMAL}, 
+      #{storeNumber0812,jdbcType=DECIMAL}, #{storeNumber0903,jdbcType=DECIMAL}, #{storeNumber0906,jdbcType=DECIMAL}, 
+      #{storeNumber0909,jdbcType=DECIMAL}, #{storeNumber0912,jdbcType=DECIMAL}, #{storeNumber1003,jdbcType=DECIMAL}, 
+      #{storeNumber1006,jdbcType=DECIMAL}, #{storeNumber1009,jdbcType=DECIMAL}, #{storeNumber1012,jdbcType=DECIMAL}, 
+      #{storeNumber1103,jdbcType=DECIMAL}, #{storeNumber1106,jdbcType=DECIMAL}, #{storeNumber1109,jdbcType=DECIMAL}, 
+      #{storeNumber1112,jdbcType=DECIMAL}, #{storeNumber1203,jdbcType=DECIMAL}, #{storeNumber1206,jdbcType=DECIMAL}, 
+      #{storeNumber1209,jdbcType=DECIMAL}, #{storeNumber1212,jdbcType=DECIMAL}, #{storeNumber1303,jdbcType=DECIMAL}, 
+      #{storeNumber1306,jdbcType=DECIMAL}, #{storeNumber1309,jdbcType=DECIMAL}, #{storeNumber1312,jdbcType=DECIMAL}, 
+      #{storeNumber1402,jdbcType=DECIMAL}, #{storeNumber1405,jdbcType=DECIMAL}, #{storeNumber1406,jdbcType=DECIMAL}, 
+      #{storeNumber1408,jdbcType=DECIMAL}, #{storeNumber1411,jdbcType=DECIMAL}, #{storeNumber1412,jdbcType=DECIMAL}, 
+      #{storeNumber1501,jdbcType=DECIMAL}, #{storeNumber1502,jdbcType=DECIMAL}, #{storeNumber1503,jdbcType=DECIMAL}, 
+      #{storeNumber1504,jdbcType=DECIMAL}, #{storeNumber1505,jdbcType=DECIMAL}, #{storeNumber1506,jdbcType=DECIMAL}, 
+      #{storeNumber1507,jdbcType=DECIMAL}, #{storeNumber1508,jdbcType=DECIMAL}, #{storeNumber1509,jdbcType=DECIMAL}, 
+      #{storeNumber1510,jdbcType=DECIMAL}, #{storeNumber1511,jdbcType=DECIMAL}, #{storeNumber1512,jdbcType=DECIMAL}, 
+      #{storeNumber1601,jdbcType=DECIMAL}, #{storeNumber1602,jdbcType=DECIMAL}, #{storeNumber1603,jdbcType=DECIMAL}, 
+      #{storeNumber1604,jdbcType=DECIMAL}, #{storeNumber1605,jdbcType=DECIMAL}, #{storeNumber1606,jdbcType=DECIMAL}, 
+      #{storeNumber1607,jdbcType=DECIMAL}, #{storeNumber1608,jdbcType=DECIMAL}, #{storeNumber1609,jdbcType=DECIMAL}, 
+      #{storeNumber1610,jdbcType=DECIMAL}, #{storeNumber1611,jdbcType=DECIMAL}, #{storeNumber1612,jdbcType=DECIMAL}, 
+      #{storeNumber1701,jdbcType=DECIMAL}, #{storeNumber1702,jdbcType=DECIMAL}, #{storeNumber1703,jdbcType=DECIMAL}, 
+      #{storeNumber1704,jdbcType=DECIMAL}, #{storeNumber1705,jdbcType=DECIMAL}, #{storeNumber1706,jdbcType=DECIMAL}, 
+      #{storeNumber1707,jdbcType=DECIMAL}, #{storeNumber1708,jdbcType=DECIMAL}, #{storeNumber1709,jdbcType=DECIMAL}, 
+      #{storeNumber1710,jdbcType=DECIMAL}, #{storeNumber1711,jdbcType=DECIMAL}, #{storeNumber1712,jdbcType=DECIMAL}, 
+      #{actualSalAmt0501,jdbcType=DECIMAL}, #{actualSalAmt0502,jdbcType=DECIMAL}, #{actualSalAmt0503,jdbcType=DECIMAL}, 
+      #{actualSalAmt0504,jdbcType=DECIMAL}, #{actualSalAmt0505,jdbcType=DECIMAL}, #{actualSalAmt0506,jdbcType=DECIMAL}, 
+      #{actualSalAmt0507,jdbcType=DECIMAL}, #{actualSalAmt0508,jdbcType=DECIMAL}, #{actualSalAmt0509,jdbcType=DECIMAL}, 
+      #{actualSalAmt0510,jdbcType=DECIMAL}, #{actualSalAmt0511,jdbcType=DECIMAL}, #{actualSalAmt0512,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal05,jdbcType=DECIMAL}, #{month05,jdbcType=VARCHAR}, #{actualSalAmt0601,jdbcType=DECIMAL}, 
+      #{actualSalAmt0602,jdbcType=DECIMAL}, #{actualSalAmt0603,jdbcType=DECIMAL}, #{actualSalAmt0604,jdbcType=DECIMAL}, 
+      #{actualSalAmt0605,jdbcType=DECIMAL}, #{actualSalAmt0606,jdbcType=DECIMAL}, #{actualSalAmt0607,jdbcType=DECIMAL}, 
+      #{actualSalAmt0608,jdbcType=DECIMAL}, #{actualSalAmt0609,jdbcType=DECIMAL}, #{actualSalAmt0610,jdbcType=DECIMAL}, 
+      #{actualSalAmt0611,jdbcType=DECIMAL}, #{actualSalAmt0612,jdbcType=DECIMAL}, #{actualSalAmtTotal06,jdbcType=DECIMAL}, 
+      #{month06,jdbcType=VARCHAR}, #{actualSalAmt0701,jdbcType=DECIMAL}, #{actualSalAmt0702,jdbcType=DECIMAL}, 
+      #{actualSalAmt0703,jdbcType=DECIMAL}, #{actualSalAmt0704,jdbcType=DECIMAL}, #{actualSalAmt0705,jdbcType=DECIMAL}, 
+      #{actualSalAmt0706,jdbcType=DECIMAL}, #{actualSalAmt0707,jdbcType=DECIMAL}, #{actualSalAmt0708,jdbcType=DECIMAL}, 
+      #{actualSalAmt0709,jdbcType=DECIMAL}, #{actualSalAmt0710,jdbcType=DECIMAL}, #{actualSalAmt0711,jdbcType=DECIMAL}, 
+      #{actualSalAmt0712,jdbcType=DECIMAL}, #{actualSalAmtTotal07,jdbcType=DECIMAL}, 
+      #{actualSalAmt0801,jdbcType=DECIMAL}, #{actualSalAmt0802,jdbcType=DECIMAL}, #{actualSalAmt0803,jdbcType=DECIMAL}, 
+      #{actualSalAmt0804,jdbcType=DECIMAL}, #{actualSalAmt0805,jdbcType=DECIMAL}, #{actualSalAmt0806,jdbcType=DECIMAL}, 
+      #{actualSalAmt0807,jdbcType=DECIMAL}, #{actualSalAmt0808,jdbcType=DECIMAL}, #{actualSalAmt0809,jdbcType=DECIMAL}, 
+      #{actualSalAmt0810,jdbcType=DECIMAL}, #{actualSalAmt0811,jdbcType=DECIMAL}, #{actualSalAmt0812,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal08,jdbcType=DECIMAL}, #{actualSalAmt0901,jdbcType=DECIMAL}, 
+      #{actualSalAmt0902,jdbcType=DECIMAL}, #{actualSalAmt0903,jdbcType=DECIMAL}, #{actualSalAmt0904,jdbcType=DECIMAL}, 
+      #{actualSalAmt0905,jdbcType=DECIMAL}, #{actualSalAmt0906,jdbcType=DECIMAL}, #{actualSalAmt0907,jdbcType=DECIMAL}, 
+      #{actualSalAmt0908,jdbcType=DECIMAL}, #{actualSalAmt0909,jdbcType=DECIMAL}, #{actualSalAmt0910,jdbcType=DECIMAL}, 
+      #{actualSalAmt0911,jdbcType=DECIMAL}, #{actualSalAmt0912,jdbcType=DECIMAL}, #{actualSalAmtTotal09,jdbcType=DECIMAL}, 
+      #{actualSalAmt1001,jdbcType=DECIMAL}, #{actualSalAmt1002,jdbcType=DECIMAL}, #{actualSalAmt1003,jdbcType=DECIMAL}, 
+      #{actualSalAmt1004,jdbcType=DECIMAL}, #{actualSalAmt1005,jdbcType=DECIMAL}, #{actualSalAmt1006,jdbcType=DECIMAL}, 
+      #{actualSalAmt1007,jdbcType=DECIMAL}, #{actualSalAmt1008,jdbcType=DECIMAL}, #{actualSalAmt1009,jdbcType=DECIMAL}, 
+      #{actualSalAmt1010,jdbcType=DECIMAL}, #{actualSalAmt1011,jdbcType=DECIMAL}, #{actualSalAmt1012,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal10,jdbcType=DECIMAL}, #{actualSalAmt1101,jdbcType=DECIMAL}, 
+      #{actualSalAmt1102,jdbcType=DECIMAL}, #{actualSalAmt1103,jdbcType=DECIMAL}, #{actualSalAmt1104,jdbcType=DECIMAL}, 
+      #{actualSalAmt1105,jdbcType=DECIMAL}, #{actualSalAmt1106,jdbcType=DECIMAL}, #{actualSalAmt1107,jdbcType=DECIMAL}, 
+      #{actualSalAmt1108,jdbcType=DECIMAL}, #{actualSalAmt1109,jdbcType=DECIMAL}, #{actualSalAmt1110,jdbcType=DECIMAL}, 
+      #{actualSalAmt1111,jdbcType=DECIMAL}, #{actualSalAmt1112,jdbcType=DECIMAL}, #{actualSalAmtTotal11,jdbcType=DECIMAL}, 
+      #{actualSalAmt1201,jdbcType=DECIMAL}, #{actualSalAmt1202,jdbcType=DECIMAL}, #{actualSalAmt1203,jdbcType=DECIMAL}, 
+      #{actualSalAmt1204,jdbcType=DECIMAL}, #{actualSalAmt1205,jdbcType=DECIMAL}, #{actualSalAmt1206,jdbcType=DECIMAL}, 
+      #{actualSalAmt1207,jdbcType=DECIMAL}, #{actualSalAmt1208,jdbcType=DECIMAL}, #{actualSalAmt1209,jdbcType=DECIMAL}, 
+      #{actualSalAmt1210,jdbcType=DECIMAL}, #{actualSalAmt1211,jdbcType=DECIMAL}, #{actualSalAmt1212,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal12,jdbcType=DECIMAL}, #{actualSalAmt1301,jdbcType=DECIMAL}, 
+      #{actualSalAmt1302,jdbcType=DECIMAL}, #{actualSalAmt1303,jdbcType=DECIMAL}, #{actualSalAmt1304,jdbcType=DECIMAL}, 
+      #{actualSalAmt1305,jdbcType=DECIMAL}, #{actualSalAmt1306,jdbcType=DECIMAL}, #{actualSalAmt1307,jdbcType=DECIMAL}, 
+      #{actualSalAmt1308,jdbcType=DECIMAL}, #{actualSalAmt1309,jdbcType=DECIMAL}, #{actualSalAmt1310,jdbcType=DECIMAL}, 
+      #{actualSalAmt1311,jdbcType=DECIMAL}, #{actualSalAmt1312,jdbcType=DECIMAL}, #{actualSalAmtTotal13,jdbcType=DECIMAL}, 
+      #{actualSalAmt1401,jdbcType=DECIMAL}, #{actualSalAmt1402,jdbcType=DECIMAL}, #{actualSalAmt1403,jdbcType=DECIMAL}, 
+      #{actualSalAmt1404,jdbcType=DECIMAL}, #{actualSalAmt1405,jdbcType=DECIMAL}, #{actualSalAmt1406,jdbcType=DECIMAL}, 
+      #{actualSalAmt1407,jdbcType=DECIMAL}, #{actualSalAmt1408,jdbcType=DECIMAL}, #{actualSalAmt1409,jdbcType=DECIMAL}, 
+      #{actualSalAmt1410,jdbcType=DECIMAL}, #{actualSalAmt1411,jdbcType=DECIMAL}, #{actualSalAmt1412,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal14,jdbcType=DECIMAL}, #{actualSalAmt1501,jdbcType=DECIMAL}, 
+      #{actualSalAmt1502,jdbcType=DECIMAL}, #{actualSalAmt1503,jdbcType=DECIMAL}, #{actualSalAmt1504,jdbcType=DECIMAL}, 
+      #{actualSalAmt1505,jdbcType=DECIMAL}, #{actualSalAmt1506,jdbcType=DECIMAL}, #{actualSalAmt1507,jdbcType=DECIMAL}, 
+      #{actualSalAmt1508,jdbcType=DECIMAL}, #{actualSalAmt1509,jdbcType=DECIMAL}, #{actualSalAmt1510,jdbcType=DECIMAL}, 
+      #{actualSalAmt1511,jdbcType=DECIMAL}, #{actualSalAmt1512,jdbcType=DECIMAL}, #{actualSalAmt1601,jdbcType=DECIMAL}, 
+      #{actualSalAmt1602,jdbcType=DECIMAL}, #{actualSalAmt1603,jdbcType=DECIMAL}, #{actualSalAmt1604,jdbcType=DECIMAL}, 
+      #{actualSalAmt1605,jdbcType=DECIMAL}, #{actualSalAmt1606,jdbcType=DECIMAL}, #{actualSalAmt1607,jdbcType=DECIMAL}, 
+      #{actualSalAmt1608,jdbcType=DECIMAL}, #{actualSalAmt1609,jdbcType=DECIMAL}, #{actualSalAmt1610,jdbcType=DECIMAL}, 
+      #{actualSalAmt1611,jdbcType=DECIMAL}, #{actualSalAmt1612,jdbcType=DECIMAL}, #{actualSalAmtTotal16,jdbcType=DECIMAL}, 
+      #{predictSalAmt1701,jdbcType=DECIMAL}, #{predictSalAmt1702,jdbcType=DECIMAL}, #{predictSalAmt1703,jdbcType=DECIMAL}, 
+      #{predictSalAmt1704,jdbcType=DECIMAL}, #{predictSalAmt1705,jdbcType=DECIMAL}, #{predictSalAmt1706,jdbcType=DECIMAL}, 
+      #{predictSalAmt1707,jdbcType=DECIMAL}, #{predictSalAmt1708,jdbcType=DECIMAL}, #{predictSalAmt1709,jdbcType=DECIMAL}, 
+      #{predictSalAmt1710,jdbcType=DECIMAL}, #{predictSalAmt1711,jdbcType=DECIMAL}, #{predictSalAmt1712,jdbcType=DECIMAL}, 
+      #{predictSalAmt17,jdbcType=DECIMAL}, #{predictSalAmt1801,jdbcType=DECIMAL}, #{predictSalAmt1802,jdbcType=DECIMAL}, 
+      #{actualSalAmt1701,jdbcType=DECIMAL}, #{actualSalAmt1702,jdbcType=DECIMAL}, #{actualSalAmt1703,jdbcType=DECIMAL}, 
+      #{actualSalAmt1704,jdbcType=DECIMAL}, #{actualSalAmt1705,jdbcType=DECIMAL}, #{actualSalAmt1706,jdbcType=DECIMAL}, 
+      #{actualSalAmt1707,jdbcType=DECIMAL}, #{actualSalAmt1708,jdbcType=DECIMAL}, #{actualSalAmt1709,jdbcType=DECIMAL}, 
+      #{actualSalAmt1710,jdbcType=DECIMAL}, #{actualSalAmt1711,jdbcType=DECIMAL}, #{actualSalAmt1712,jdbcType=DECIMAL}, 
+      #{actualSalAmtTotal17,jdbcType=DECIMAL}, #{sameMonth,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{mapStore,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.topsports.weixin.common.model2.StoreSalSummary" >
+    INSERT INTO STORE_SAL_SUMMARY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="organNewNo != null" >
+        ORGAN_NEW_NO,
+      </if>
+      <if test="regionName != null" >
+        REGION_NAME,
+      </if>
+      <if test="provinceName != null" >
+        PROVINCE_NAME,
+      </if>
+      <if test="zoneName != null" >
+        ZONE_NAME,
+      </if>
+      <if test="managingCityName != null" >
+        MANAGING_CITY_NAME,
+      </if>
+      <if test="cityName != null" >
+        CITY_NAME,
+      </if>
+      <if test="cityLevel != null" >
+        CITY_LEVEL,
+      </if>
+      <if test="brandClassification != null" >
+        BRAND_CLASSIFICATION,
+      </if>
+      <if test="brandEname != null" >
+        BRAND_ENAME,
+      </if>
+      <if test="brandSecondary != null" >
+        BRAND_SECONDARY,
+      </if>
+      <if test="salNature != null" >
+        SAL_NATURE,
+      </if>
+      <if test="organName != null" >
+        ORGAN_NAME,
+      </if>
+      <if test="storeNature != null" >
+        STORE_NATURE,
+      </if>
+      <if test="mallName != null" >
+        MALL_NAME,
+      </if>
+      <if test="businessGroupName != null" >
+        BUSINESS_GROUP_NAME,
+      </if>
+      <if test="channelName != null" >
+        CHANNEL_NAME,
+      </if>
+      <if test="storeNatureSecondLevel != null" >
+        STORE_NATURE_SECOND_LEVEL,
+      </if>
+      <if test="brandRelegation != null" >
+        BRAND_RELEGATION,
+      </if>
+      <if test="businessMode != null" >
+        BUSINESS_MODE,
+      </if>
+      <if test="businessMode1 != null" >
+        BUSINESS_MODE1,
+      </if>
+      <if test="ifSameRatio != null" >
+        IF_SAME_RATIO,
+      </if>
+      <if test="businessCondition != null" >
+        BUSINESS_CONDITION,
+      </if>
+      <if test="cmanAddress != null" >
+        CMAN_ADDRESS,
+      </if>
+      <if test="storeArea != null" >
+        STORE_AREA,
+      </if>
+      <if test="opendt != null" >
+        OPENDT,
+      </if>
+      <if test="closedt != null" >
+        CLOSEDT,
+      </if>
+      <if test="opendt1 != null" >
+        OPENDT1,
+      </if>
+      <if test="closedt1 != null" >
+        CLOSEDT1,
+      </if>
+      <if test="storeNumber0509 != null" >
+        STORE_NUMBER_0509,
+      </if>
+      <if test="storeNumber0512 != null" >
+        STORE_NUMBER_0512,
+      </if>
+      <if test="storeNumber0603 != null" >
+        STORE_NUMBER_0603,
+      </if>
+      <if test="storeNumber0606 != null" >
+        STORE_NUMBER_0606,
+      </if>
+      <if test="storeNumber0609 != null" >
+        STORE_NUMBER_0609,
+      </if>
+      <if test="storeNumber0612 != null" >
+        STORE_NUMBER_0612,
+      </if>
+      <if test="storeNumberAdd06 != null" >
+        STORE_NUMBER_ADD_06,
+      </if>
+      <if test="storeNumber0703 != null" >
+        STORE_NUMBER_0703,
+      </if>
+      <if test="storeNumber0706 != null" >
+        STORE_NUMBER_0706,
+      </if>
+      <if test="storeNumber0709 != null" >
+        STORE_NUMBER_0709,
+      </if>
+      <if test="storeNumber0712 != null" >
+        STORE_NUMBER_0712,
+      </if>
+      <if test="storeNumber0803 != null" >
+        STORE_NUMBER_0803,
+      </if>
+      <if test="storeNumber0806 != null" >
+        STORE_NUMBER_0806,
+      </if>
+      <if test="storeNumber0809 != null" >
+        STORE_NUMBER_0809,
+      </if>
+      <if test="storeNumber0812 != null" >
+        STORE_NUMBER_0812,
+      </if>
+      <if test="storeNumber0903 != null" >
+        STORE_NUMBER_0903,
+      </if>
+      <if test="storeNumber0906 != null" >
+        STORE_NUMBER_0906,
+      </if>
+      <if test="storeNumber0909 != null" >
+        STORE_NUMBER_0909,
+      </if>
+      <if test="storeNumber0912 != null" >
+        STORE_NUMBER_0912,
+      </if>
+      <if test="storeNumber1003 != null" >
+        STORE_NUMBER_1003,
+      </if>
+      <if test="storeNumber1006 != null" >
+        STORE_NUMBER_1006,
+      </if>
+      <if test="storeNumber1009 != null" >
+        STORE_NUMBER_1009,
+      </if>
+      <if test="storeNumber1012 != null" >
+        STORE_NUMBER_1012,
+      </if>
+      <if test="storeNumber1103 != null" >
+        STORE_NUMBER_1103,
+      </if>
+      <if test="storeNumber1106 != null" >
+        STORE_NUMBER_1106,
+      </if>
+      <if test="storeNumber1109 != null" >
+        STORE_NUMBER_1109,
+      </if>
+      <if test="storeNumber1112 != null" >
+        STORE_NUMBER_1112,
+      </if>
+      <if test="storeNumber1203 != null" >
+        STORE_NUMBER_1203,
+      </if>
+      <if test="storeNumber1206 != null" >
+        STORE_NUMBER_1206,
+      </if>
+      <if test="storeNumber1209 != null" >
+        STORE_NUMBER_1209,
+      </if>
+      <if test="storeNumber1212 != null" >
+        STORE_NUMBER_1212,
+      </if>
+      <if test="storeNumber1303 != null" >
+        STORE_NUMBER_1303,
+      </if>
+      <if test="storeNumber1306 != null" >
+        STORE_NUMBER_1306,
+      </if>
+      <if test="storeNumber1309 != null" >
+        STORE_NUMBER_1309,
+      </if>
+      <if test="storeNumber1312 != null" >
+        STORE_NUMBER_1312,
+      </if>
+      <if test="storeNumber1402 != null" >
+        STORE_NUMBER_1402,
+      </if>
+      <if test="storeNumber1405 != null" >
+        STORE_NUMBER_1405,
+      </if>
+      <if test="storeNumber1406 != null" >
+        STORE_NUMBER_1406,
+      </if>
+      <if test="storeNumber1408 != null" >
+        STORE_NUMBER_1408,
+      </if>
+      <if test="storeNumber1411 != null" >
+        STORE_NUMBER_1411,
+      </if>
+      <if test="storeNumber1412 != null" >
+        STORE_NUMBER_1412,
+      </if>
+      <if test="storeNumber1501 != null" >
+        STORE_NUMBER_1501,
+      </if>
+      <if test="storeNumber1502 != null" >
+        STORE_NUMBER_1502,
+      </if>
+      <if test="storeNumber1503 != null" >
+        STORE_NUMBER_1503,
+      </if>
+      <if test="storeNumber1504 != null" >
+        STORE_NUMBER_1504,
+      </if>
+      <if test="storeNumber1505 != null" >
+        STORE_NUMBER_1505,
+      </if>
+      <if test="storeNumber1506 != null" >
+        STORE_NUMBER_1506,
+      </if>
+      <if test="storeNumber1507 != null" >
+        STORE_NUMBER_1507,
+      </if>
+      <if test="storeNumber1508 != null" >
+        STORE_NUMBER_1508,
+      </if>
+      <if test="storeNumber1509 != null" >
+        STORE_NUMBER_1509,
+      </if>
+      <if test="storeNumber1510 != null" >
+        STORE_NUMBER_1510,
+      </if>
+      <if test="storeNumber1511 != null" >
+        STORE_NUMBER_1511,
+      </if>
+      <if test="storeNumber1512 != null" >
+        STORE_NUMBER_1512,
+      </if>
+      <if test="storeNumber1601 != null" >
+        STORE_NUMBER_1601,
+      </if>
+      <if test="storeNumber1602 != null" >
+        STORE_NUMBER_1602,
+      </if>
+      <if test="storeNumber1603 != null" >
+        STORE_NUMBER_1603,
+      </if>
+      <if test="storeNumber1604 != null" >
+        STORE_NUMBER_1604,
+      </if>
+      <if test="storeNumber1605 != null" >
+        STORE_NUMBER_1605,
+      </if>
+      <if test="storeNumber1606 != null" >
+        STORE_NUMBER_1606,
+      </if>
+      <if test="storeNumber1607 != null" >
+        STORE_NUMBER_1607,
+      </if>
+      <if test="storeNumber1608 != null" >
+        STORE_NUMBER_1608,
+      </if>
+      <if test="storeNumber1609 != null" >
+        STORE_NUMBER_1609,
+      </if>
+      <if test="storeNumber1610 != null" >
+        STORE_NUMBER_1610,
+      </if>
+      <if test="storeNumber1611 != null" >
+        STORE_NUMBER_1611,
+      </if>
+      <if test="storeNumber1612 != null" >
+        STORE_NUMBER_1612,
+      </if>
+      <if test="storeNumber1701 != null" >
+        STORE_NUMBER_1701,
+      </if>
+      <if test="storeNumber1702 != null" >
+        STORE_NUMBER_1702,
+      </if>
+      <if test="storeNumber1703 != null" >
+        STORE_NUMBER_1703,
+      </if>
+      <if test="storeNumber1704 != null" >
+        STORE_NUMBER_1704,
+      </if>
+      <if test="storeNumber1705 != null" >
+        STORE_NUMBER_1705,
+      </if>
+      <if test="storeNumber1706 != null" >
+        STORE_NUMBER_1706,
+      </if>
+      <if test="storeNumber1707 != null" >
+        STORE_NUMBER_1707,
+      </if>
+      <if test="storeNumber1708 != null" >
+        STORE_NUMBER_1708,
+      </if>
+      <if test="storeNumber1709 != null" >
+        STORE_NUMBER_1709,
+      </if>
+      <if test="storeNumber1710 != null" >
+        STORE_NUMBER_1710,
+      </if>
+      <if test="storeNumber1711 != null" >
+        STORE_NUMBER_1711,
+      </if>
+      <if test="storeNumber1712 != null" >
+        STORE_NUMBER_1712,
+      </if>
+      <if test="actualSalAmt0501 != null" >
+        ACTUAL_SAL_AMT_0501,
+      </if>
+      <if test="actualSalAmt0502 != null" >
+        ACTUAL_SAL_AMT_0502,
+      </if>
+      <if test="actualSalAmt0503 != null" >
+        ACTUAL_SAL_AMT_0503,
+      </if>
+      <if test="actualSalAmt0504 != null" >
+        ACTUAL_SAL_AMT_0504,
+      </if>
+      <if test="actualSalAmt0505 != null" >
+        ACTUAL_SAL_AMT_0505,
+      </if>
+      <if test="actualSalAmt0506 != null" >
+        ACTUAL_SAL_AMT_0506,
+      </if>
+      <if test="actualSalAmt0507 != null" >
+        ACTUAL_SAL_AMT_0507,
+      </if>
+      <if test="actualSalAmt0508 != null" >
+        ACTUAL_SAL_AMT_0508,
+      </if>
+      <if test="actualSalAmt0509 != null" >
+        ACTUAL_SAL_AMT_0509,
+      </if>
+      <if test="actualSalAmt0510 != null" >
+        ACTUAL_SAL_AMT_0510,
+      </if>
+      <if test="actualSalAmt0511 != null" >
+        ACTUAL_SAL_AMT_0511,
+      </if>
+      <if test="actualSalAmt0512 != null" >
+        ACTUAL_SAL_AMT_0512,
+      </if>
+      <if test="actualSalAmtTotal05 != null" >
+        ACTUAL_SAL_AMT_TOTAL_05,
+      </if>
+      <if test="month05 != null" >
+        MONTH_05,
+      </if>
+      <if test="actualSalAmt0601 != null" >
+        ACTUAL_SAL_AMT_0601,
+      </if>
+      <if test="actualSalAmt0602 != null" >
+        ACTUAL_SAL_AMT_0602,
+      </if>
+      <if test="actualSalAmt0603 != null" >
+        ACTUAL_SAL_AMT_0603,
+      </if>
+      <if test="actualSalAmt0604 != null" >
+        ACTUAL_SAL_AMT_0604,
+      </if>
+      <if test="actualSalAmt0605 != null" >
+        ACTUAL_SAL_AMT_0605,
+      </if>
+      <if test="actualSalAmt0606 != null" >
+        ACTUAL_SAL_AMT_0606,
+      </if>
+      <if test="actualSalAmt0607 != null" >
+        ACTUAL_SAL_AMT_0607,
+      </if>
+      <if test="actualSalAmt0608 != null" >
+        ACTUAL_SAL_AMT_0608,
+      </if>
+      <if test="actualSalAmt0609 != null" >
+        ACTUAL_SAL_AMT_0609,
+      </if>
+      <if test="actualSalAmt0610 != null" >
+        ACTUAL_SAL_AMT_0610,
+      </if>
+      <if test="actualSalAmt0611 != null" >
+        ACTUAL_SAL_AMT_0611,
+      </if>
+      <if test="actualSalAmt0612 != null" >
+        ACTUAL_SAL_AMT_0612,
+      </if>
+      <if test="actualSalAmtTotal06 != null" >
+        ACTUAL_SAL_AMT_TOTAL_06,
+      </if>
+      <if test="month06 != null" >
+        MONTH_06,
+      </if>
+      <if test="actualSalAmt0701 != null" >
+        ACTUAL_SAL_AMT_0701,
+      </if>
+      <if test="actualSalAmt0702 != null" >
+        ACTUAL_SAL_AMT_0702,
+      </if>
+      <if test="actualSalAmt0703 != null" >
+        ACTUAL_SAL_AMT_0703,
+      </if>
+      <if test="actualSalAmt0704 != null" >
+        ACTUAL_SAL_AMT_0704,
+      </if>
+      <if test="actualSalAmt0705 != null" >
+        ACTUAL_SAL_AMT_0705,
+      </if>
+      <if test="actualSalAmt0706 != null" >
+        ACTUAL_SAL_AMT_0706,
+      </if>
+      <if test="actualSalAmt0707 != null" >
+        ACTUAL_SAL_AMT_0707,
+      </if>
+      <if test="actualSalAmt0708 != null" >
+        ACTUAL_SAL_AMT_0708,
+      </if>
+      <if test="actualSalAmt0709 != null" >
+        ACTUAL_SAL_AMT_0709,
+      </if>
+      <if test="actualSalAmt0710 != null" >
+        ACTUAL_SAL_AMT_0710,
+      </if>
+      <if test="actualSalAmt0711 != null" >
+        ACTUAL_SAL_AMT_0711,
+      </if>
+      <if test="actualSalAmt0712 != null" >
+        ACTUAL_SAL_AMT_0712,
+      </if>
+      <if test="actualSalAmtTotal07 != null" >
+        ACTUAL_SAL_AMT_TOTAL_07,
+      </if>
+      <if test="actualSalAmt0801 != null" >
+        ACTUAL_SAL_AMT_0801,
+      </if>
+      <if test="actualSalAmt0802 != null" >
+        ACTUAL_SAL_AMT_0802,
+      </if>
+      <if test="actualSalAmt0803 != null" >
+        ACTUAL_SAL_AMT_0803,
+      </if>
+      <if test="actualSalAmt0804 != null" >
+        ACTUAL_SAL_AMT_0804,
+      </if>
+      <if test="actualSalAmt0805 != null" >
+        ACTUAL_SAL_AMT_0805,
+      </if>
+      <if test="actualSalAmt0806 != null" >
+        ACTUAL_SAL_AMT_0806,
+      </if>
+      <if test="actualSalAmt0807 != null" >
+        ACTUAL_SAL_AMT_0807,
+      </if>
+      <if test="actualSalAmt0808 != null" >
+        ACTUAL_SAL_AMT_0808,
+      </if>
+      <if test="actualSalAmt0809 != null" >
+        ACTUAL_SAL_AMT_0809,
+      </if>
+      <if test="actualSalAmt0810 != null" >
+        ACTUAL_SAL_AMT_0810,
+      </if>
+      <if test="actualSalAmt0811 != null" >
+        ACTUAL_SAL_AMT_0811,
+      </if>
+      <if test="actualSalAmt0812 != null" >
+        ACTUAL_SAL_AMT_0812,
+      </if>
+      <if test="actualSalAmtTotal08 != null" >
+        ACTUAL_SAL_AMT_TOTAL_08,
+      </if>
+      <if test="actualSalAmt0901 != null" >
+        ACTUAL_SAL_AMT_0901,
+      </if>
+      <if test="actualSalAmt0902 != null" >
+        ACTUAL_SAL_AMT_0902,
+      </if>
+      <if test="actualSalAmt0903 != null" >
+        ACTUAL_SAL_AMT_0903,
+      </if>
+      <if test="actualSalAmt0904 != null" >
+        ACTUAL_SAL_AMT_0904,
+      </if>
+      <if test="actualSalAmt0905 != null" >
+        ACTUAL_SAL_AMT_0905,
+      </if>
+      <if test="actualSalAmt0906 != null" >
+        ACTUAL_SAL_AMT_0906,
+      </if>
+      <if test="actualSalAmt0907 != null" >
+        ACTUAL_SAL_AMT_0907,
+      </if>
+      <if test="actualSalAmt0908 != null" >
+        ACTUAL_SAL_AMT_0908,
+      </if>
+      <if test="actualSalAmt0909 != null" >
+        ACTUAL_SAL_AMT_0909,
+      </if>
+      <if test="actualSalAmt0910 != null" >
+        ACTUAL_SAL_AMT_0910,
+      </if>
+      <if test="actualSalAmt0911 != null" >
+        ACTUAL_SAL_AMT_0911,
+      </if>
+      <if test="actualSalAmt0912 != null" >
+        ACTUAL_SAL_AMT_0912,
+      </if>
+      <if test="actualSalAmtTotal09 != null" >
+        ACTUAL_SAL_AMT_TOTAL_09,
+      </if>
+      <if test="actualSalAmt1001 != null" >
+        ACTUAL_SAL_AMT_1001,
+      </if>
+      <if test="actualSalAmt1002 != null" >
+        ACTUAL_SAL_AMT_1002,
+      </if>
+      <if test="actualSalAmt1003 != null" >
+        ACTUAL_SAL_AMT_1003,
+      </if>
+      <if test="actualSalAmt1004 != null" >
+        ACTUAL_SAL_AMT_1004,
+      </if>
+      <if test="actualSalAmt1005 != null" >
+        ACTUAL_SAL_AMT_1005,
+      </if>
+      <if test="actualSalAmt1006 != null" >
+        ACTUAL_SAL_AMT_1006,
+      </if>
+      <if test="actualSalAmt1007 != null" >
+        ACTUAL_SAL_AMT_1007,
+      </if>
+      <if test="actualSalAmt1008 != null" >
+        ACTUAL_SAL_AMT_1008,
+      </if>
+      <if test="actualSalAmt1009 != null" >
+        ACTUAL_SAL_AMT_1009,
+      </if>
+      <if test="actualSalAmt1010 != null" >
+        ACTUAL_SAL_AMT_1010,
+      </if>
+      <if test="actualSalAmt1011 != null" >
+        ACTUAL_SAL_AMT_1011,
+      </if>
+      <if test="actualSalAmt1012 != null" >
+        ACTUAL_SAL_AMT_1012,
+      </if>
+      <if test="actualSalAmtTotal10 != null" >
+        ACTUAL_SAL_AMT_TOTAL_10,
+      </if>
+      <if test="actualSalAmt1101 != null" >
+        ACTUAL_SAL_AMT_1101,
+      </if>
+      <if test="actualSalAmt1102 != null" >
+        ACTUAL_SAL_AMT_1102,
+      </if>
+      <if test="actualSalAmt1103 != null" >
+        ACTUAL_SAL_AMT_1103,
+      </if>
+      <if test="actualSalAmt1104 != null" >
+        ACTUAL_SAL_AMT_1104,
+      </if>
+      <if test="actualSalAmt1105 != null" >
+        ACTUAL_SAL_AMT_1105,
+      </if>
+      <if test="actualSalAmt1106 != null" >
+        ACTUAL_SAL_AMT_1106,
+      </if>
+      <if test="actualSalAmt1107 != null" >
+        ACTUAL_SAL_AMT_1107,
+      </if>
+      <if test="actualSalAmt1108 != null" >
+        ACTUAL_SAL_AMT_1108,
+      </if>
+      <if test="actualSalAmt1109 != null" >
+        ACTUAL_SAL_AMT_1109,
+      </if>
+      <if test="actualSalAmt1110 != null" >
+        ACTUAL_SAL_AMT_1110,
+      </if>
+      <if test="actualSalAmt1111 != null" >
+        ACTUAL_SAL_AMT_1111,
+      </if>
+      <if test="actualSalAmt1112 != null" >
+        ACTUAL_SAL_AMT_1112,
+      </if>
+      <if test="actualSalAmtTotal11 != null" >
+        ACTUAL_SAL_AMT_TOTAL_11,
+      </if>
+      <if test="actualSalAmt1201 != null" >
+        ACTUAL_SAL_AMT_1201,
+      </if>
+      <if test="actualSalAmt1202 != null" >
+        ACTUAL_SAL_AMT_1202,
+      </if>
+      <if test="actualSalAmt1203 != null" >
+        ACTUAL_SAL_AMT_1203,
+      </if>
+      <if test="actualSalAmt1204 != null" >
+        ACTUAL_SAL_AMT_1204,
+      </if>
+      <if test="actualSalAmt1205 != null" >
+        ACTUAL_SAL_AMT_1205,
+      </if>
+      <if test="actualSalAmt1206 != null" >
+        ACTUAL_SAL_AMT_1206,
+      </if>
+      <if test="actualSalAmt1207 != null" >
+        ACTUAL_SAL_AMT_1207,
+      </if>
+      <if test="actualSalAmt1208 != null" >
+        ACTUAL_SAL_AMT_1208,
+      </if>
+      <if test="actualSalAmt1209 != null" >
+        ACTUAL_SAL_AMT_1209,
+      </if>
+      <if test="actualSalAmt1210 != null" >
+        ACTUAL_SAL_AMT_1210,
+      </if>
+      <if test="actualSalAmt1211 != null" >
+        ACTUAL_SAL_AMT_1211,
+      </if>
+      <if test="actualSalAmt1212 != null" >
+        ACTUAL_SAL_AMT_1212,
+      </if>
+      <if test="actualSalAmtTotal12 != null" >
+        ACTUAL_SAL_AMT_TOTAL_12,
+      </if>
+      <if test="actualSalAmt1301 != null" >
+        ACTUAL_SAL_AMT_1301,
+      </if>
+      <if test="actualSalAmt1302 != null" >
+        ACTUAL_SAL_AMT_1302,
+      </if>
+      <if test="actualSalAmt1303 != null" >
+        ACTUAL_SAL_AMT_1303,
+      </if>
+      <if test="actualSalAmt1304 != null" >
+        ACTUAL_SAL_AMT_1304,
+      </if>
+      <if test="actualSalAmt1305 != null" >
+        ACTUAL_SAL_AMT_1305,
+      </if>
+      <if test="actualSalAmt1306 != null" >
+        ACTUAL_SAL_AMT_1306,
+      </if>
+      <if test="actualSalAmt1307 != null" >
+        ACTUAL_SAL_AMT_1307,
+      </if>
+      <if test="actualSalAmt1308 != null" >
+        ACTUAL_SAL_AMT_1308,
+      </if>
+      <if test="actualSalAmt1309 != null" >
+        ACTUAL_SAL_AMT_1309,
+      </if>
+      <if test="actualSalAmt1310 != null" >
+        ACTUAL_SAL_AMT_1310,
+      </if>
+      <if test="actualSalAmt1311 != null" >
+        ACTUAL_SAL_AMT_1311,
+      </if>
+      <if test="actualSalAmt1312 != null" >
+        ACTUAL_SAL_AMT_1312,
+      </if>
+      <if test="actualSalAmtTotal13 != null" >
+        ACTUAL_SAL_AMT_TOTAL_13,
+      </if>
+      <if test="actualSalAmt1401 != null" >
+        ACTUAL_SAL_AMT_1401,
+      </if>
+      <if test="actualSalAmt1402 != null" >
+        ACTUAL_SAL_AMT_1402,
+      </if>
+      <if test="actualSalAmt1403 != null" >
+        ACTUAL_SAL_AMT_1403,
+      </if>
+      <if test="actualSalAmt1404 != null" >
+        ACTUAL_SAL_AMT_1404,
+      </if>
+      <if test="actualSalAmt1405 != null" >
+        ACTUAL_SAL_AMT_1405,
+      </if>
+      <if test="actualSalAmt1406 != null" >
+        ACTUAL_SAL_AMT_1406,
+      </if>
+      <if test="actualSalAmt1407 != null" >
+        ACTUAL_SAL_AMT_1407,
+      </if>
+      <if test="actualSalAmt1408 != null" >
+        ACTUAL_SAL_AMT_1408,
+      </if>
+      <if test="actualSalAmt1409 != null" >
+        ACTUAL_SAL_AMT_1409,
+      </if>
+      <if test="actualSalAmt1410 != null" >
+        ACTUAL_SAL_AMT_1410,
+      </if>
+      <if test="actualSalAmt1411 != null" >
+        ACTUAL_SAL_AMT_1411,
+      </if>
+      <if test="actualSalAmt1412 != null" >
+        ACTUAL_SAL_AMT_1412,
+      </if>
+      <if test="actualSalAmtTotal14 != null" >
+        ACTUAL_SAL_AMT_TOTAL_14,
+      </if>
+      <if test="actualSalAmt1501 != null" >
+        ACTUAL_SAL_AMT_1501,
+      </if>
+      <if test="actualSalAmt1502 != null" >
+        ACTUAL_SAL_AMT_1502,
+      </if>
+      <if test="actualSalAmt1503 != null" >
+        ACTUAL_SAL_AMT_1503,
+      </if>
+      <if test="actualSalAmt1504 != null" >
+        ACTUAL_SAL_AMT_1504,
+      </if>
+      <if test="actualSalAmt1505 != null" >
+        ACTUAL_SAL_AMT_1505,
+      </if>
+      <if test="actualSalAmt1506 != null" >
+        ACTUAL_SAL_AMT_1506,
+      </if>
+      <if test="actualSalAmt1507 != null" >
+        ACTUAL_SAL_AMT_1507,
+      </if>
+      <if test="actualSalAmt1508 != null" >
+        ACTUAL_SAL_AMT_1508,
+      </if>
+      <if test="actualSalAmt1509 != null" >
+        ACTUAL_SAL_AMT_1509,
+      </if>
+      <if test="actualSalAmt1510 != null" >
+        ACTUAL_SAL_AMT_1510,
+      </if>
+      <if test="actualSalAmt1511 != null" >
+        ACTUAL_SAL_AMT_1511,
+      </if>
+      <if test="actualSalAmt1512 != null" >
+        ACTUAL_SAL_AMT_1512,
+      </if>
+      <if test="actualSalAmt1601 != null" >
+        ACTUAL_SAL_AMT_1601,
+      </if>
+      <if test="actualSalAmt1602 != null" >
+        ACTUAL_SAL_AMT_1602,
+      </if>
+      <if test="actualSalAmt1603 != null" >
+        ACTUAL_SAL_AMT_1603,
+      </if>
+      <if test="actualSalAmt1604 != null" >
+        ACTUAL_SAL_AMT_1604,
+      </if>
+      <if test="actualSalAmt1605 != null" >
+        ACTUAL_SAL_AMT_1605,
+      </if>
+      <if test="actualSalAmt1606 != null" >
+        ACTUAL_SAL_AMT_1606,
+      </if>
+      <if test="actualSalAmt1607 != null" >
+        ACTUAL_SAL_AMT_1607,
+      </if>
+      <if test="actualSalAmt1608 != null" >
+        ACTUAL_SAL_AMT_1608,
+      </if>
+      <if test="actualSalAmt1609 != null" >
+        ACTUAL_SAL_AMT_1609,
+      </if>
+      <if test="actualSalAmt1610 != null" >
+        ACTUAL_SAL_AMT_1610,
+      </if>
+      <if test="actualSalAmt1611 != null" >
+        ACTUAL_SAL_AMT_1611,
+      </if>
+      <if test="actualSalAmt1612 != null" >
+        ACTUAL_SAL_AMT_1612,
+      </if>
+      <if test="actualSalAmtTotal16 != null" >
+        ACTUAL_SAL_AMT_TOTAL_16,
+      </if>
+      <if test="predictSalAmt1701 != null" >
+        PREDICT_SAL_AMT_1701,
+      </if>
+      <if test="predictSalAmt1702 != null" >
+        PREDICT_SAL_AMT_1702,
+      </if>
+      <if test="predictSalAmt1703 != null" >
+        PREDICT_SAL_AMT_1703,
+      </if>
+      <if test="predictSalAmt1704 != null" >
+        PREDICT_SAL_AMT_1704,
+      </if>
+      <if test="predictSalAmt1705 != null" >
+        PREDICT_SAL_AMT_1705,
+      </if>
+      <if test="predictSalAmt1706 != null" >
+        PREDICT_SAL_AMT_1706,
+      </if>
+      <if test="predictSalAmt1707 != null" >
+        PREDICT_SAL_AMT_1707,
+      </if>
+      <if test="predictSalAmt1708 != null" >
+        PREDICT_SAL_AMT_1708,
+      </if>
+      <if test="predictSalAmt1709 != null" >
+        PREDICT_SAL_AMT_1709,
+      </if>
+      <if test="predictSalAmt1710 != null" >
+        PREDICT_SAL_AMT_1710,
+      </if>
+      <if test="predictSalAmt1711 != null" >
+        PREDICT_SAL_AMT_1711,
+      </if>
+      <if test="predictSalAmt1712 != null" >
+        PREDICT_SAL_AMT_1712,
+      </if>
+      <if test="predictSalAmt17 != null" >
+        PREDICT_SAL_AMT_17,
+      </if>
+      <if test="predictSalAmt1801 != null" >
+        PREDICT_SAL_AMT_1801,
+      </if>
+      <if test="predictSalAmt1802 != null" >
+        PREDICT_SAL_AMT_1802,
+      </if>
+      <if test="actualSalAmt1701 != null" >
+        ACTUAL_SAL_AMT_1701,
+      </if>
+      <if test="actualSalAmt1702 != null" >
+        ACTUAL_SAL_AMT_1702,
+      </if>
+      <if test="actualSalAmt1703 != null" >
+        ACTUAL_SAL_AMT_1703,
+      </if>
+      <if test="actualSalAmt1704 != null" >
+        ACTUAL_SAL_AMT_1704,
+      </if>
+      <if test="actualSalAmt1705 != null" >
+        ACTUAL_SAL_AMT_1705,
+      </if>
+      <if test="actualSalAmt1706 != null" >
+        ACTUAL_SAL_AMT_1706,
+      </if>
+      <if test="actualSalAmt1707 != null" >
+        ACTUAL_SAL_AMT_1707,
+      </if>
+      <if test="actualSalAmt1708 != null" >
+        ACTUAL_SAL_AMT_1708,
+      </if>
+      <if test="actualSalAmt1709 != null" >
+        ACTUAL_SAL_AMT_1709,
+      </if>
+      <if test="actualSalAmt1710 != null" >
+        ACTUAL_SAL_AMT_1710,
+      </if>
+      <if test="actualSalAmt1711 != null" >
+        ACTUAL_SAL_AMT_1711,
+      </if>
+      <if test="actualSalAmt1712 != null" >
+        ACTUAL_SAL_AMT_1712,
+      </if>
+      <if test="actualSalAmtTotal17 != null" >
+        ACTUAL_SAL_AMT_TOTAL_17,
+      </if>
+      <if test="sameMonth != null" >
+        SAME_MONTH,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="mapStore != null" >
+        MAP_STORE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="organNewNo != null" >
+        #{organNewNo,jdbcType=VARCHAR},
+      </if>
+      <if test="regionName != null" >
+        #{regionName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="zoneName != null" >
+        #{zoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="managingCityName != null" >
+        #{managingCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityLevel != null" >
+        #{cityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="brandClassification != null" >
+        #{brandClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="brandEname != null" >
+        #{brandEname,jdbcType=VARCHAR},
+      </if>
+      <if test="brandSecondary != null" >
+        #{brandSecondary,jdbcType=VARCHAR},
+      </if>
+      <if test="salNature != null" >
+        #{salNature,jdbcType=VARCHAR},
+      </if>
+      <if test="organName != null" >
+        #{organName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNature != null" >
+        #{storeNature,jdbcType=VARCHAR},
+      </if>
+      <if test="mallName != null" >
+        #{mallName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessGroupName != null" >
+        #{businessGroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="channelName != null" >
+        #{channelName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNatureSecondLevel != null" >
+        #{storeNatureSecondLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="brandRelegation != null" >
+        #{brandRelegation,jdbcType=VARCHAR},
+      </if>
+      <if test="businessMode != null" >
+        #{businessMode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessMode1 != null" >
+        #{businessMode1,jdbcType=VARCHAR},
+      </if>
+      <if test="ifSameRatio != null" >
+        #{ifSameRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCondition != null" >
+        #{businessCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="cmanAddress != null" >
+        #{cmanAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="storeArea != null" >
+        #{storeArea,jdbcType=DECIMAL},
+      </if>
+      <if test="opendt != null" >
+        #{opendt,jdbcType=VARCHAR},
+      </if>
+      <if test="closedt != null" >
+        #{closedt,jdbcType=VARCHAR},
+      </if>
+      <if test="opendt1 != null" >
+        #{opendt1,jdbcType=VARCHAR},
+      </if>
+      <if test="closedt1 != null" >
+        #{closedt1,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNumber0509 != null" >
+        #{storeNumber0509,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0512 != null" >
+        #{storeNumber0512,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0603 != null" >
+        #{storeNumber0603,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0606 != null" >
+        #{storeNumber0606,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0609 != null" >
+        #{storeNumber0609,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0612 != null" >
+        #{storeNumber0612,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumberAdd06 != null" >
+        #{storeNumberAdd06,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0703 != null" >
+        #{storeNumber0703,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0706 != null" >
+        #{storeNumber0706,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0709 != null" >
+        #{storeNumber0709,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0712 != null" >
+        #{storeNumber0712,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0803 != null" >
+        #{storeNumber0803,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0806 != null" >
+        #{storeNumber0806,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0809 != null" >
+        #{storeNumber0809,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0812 != null" >
+        #{storeNumber0812,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0903 != null" >
+        #{storeNumber0903,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0906 != null" >
+        #{storeNumber0906,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0909 != null" >
+        #{storeNumber0909,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber0912 != null" >
+        #{storeNumber0912,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1003 != null" >
+        #{storeNumber1003,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1006 != null" >
+        #{storeNumber1006,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1009 != null" >
+        #{storeNumber1009,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1012 != null" >
+        #{storeNumber1012,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1103 != null" >
+        #{storeNumber1103,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1106 != null" >
+        #{storeNumber1106,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1109 != null" >
+        #{storeNumber1109,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1112 != null" >
+        #{storeNumber1112,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1203 != null" >
+        #{storeNumber1203,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1206 != null" >
+        #{storeNumber1206,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1209 != null" >
+        #{storeNumber1209,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1212 != null" >
+        #{storeNumber1212,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1303 != null" >
+        #{storeNumber1303,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1306 != null" >
+        #{storeNumber1306,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1309 != null" >
+        #{storeNumber1309,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1312 != null" >
+        #{storeNumber1312,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1402 != null" >
+        #{storeNumber1402,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1405 != null" >
+        #{storeNumber1405,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1406 != null" >
+        #{storeNumber1406,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1408 != null" >
+        #{storeNumber1408,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1411 != null" >
+        #{storeNumber1411,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1412 != null" >
+        #{storeNumber1412,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1501 != null" >
+        #{storeNumber1501,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1502 != null" >
+        #{storeNumber1502,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1503 != null" >
+        #{storeNumber1503,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1504 != null" >
+        #{storeNumber1504,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1505 != null" >
+        #{storeNumber1505,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1506 != null" >
+        #{storeNumber1506,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1507 != null" >
+        #{storeNumber1507,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1508 != null" >
+        #{storeNumber1508,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1509 != null" >
+        #{storeNumber1509,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1510 != null" >
+        #{storeNumber1510,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1511 != null" >
+        #{storeNumber1511,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1512 != null" >
+        #{storeNumber1512,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1601 != null" >
+        #{storeNumber1601,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1602 != null" >
+        #{storeNumber1602,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1603 != null" >
+        #{storeNumber1603,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1604 != null" >
+        #{storeNumber1604,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1605 != null" >
+        #{storeNumber1605,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1606 != null" >
+        #{storeNumber1606,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1607 != null" >
+        #{storeNumber1607,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1608 != null" >
+        #{storeNumber1608,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1609 != null" >
+        #{storeNumber1609,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1610 != null" >
+        #{storeNumber1610,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1611 != null" >
+        #{storeNumber1611,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1612 != null" >
+        #{storeNumber1612,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1701 != null" >
+        #{storeNumber1701,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1702 != null" >
+        #{storeNumber1702,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1703 != null" >
+        #{storeNumber1703,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1704 != null" >
+        #{storeNumber1704,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1705 != null" >
+        #{storeNumber1705,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1706 != null" >
+        #{storeNumber1706,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1707 != null" >
+        #{storeNumber1707,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1708 != null" >
+        #{storeNumber1708,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1709 != null" >
+        #{storeNumber1709,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1710 != null" >
+        #{storeNumber1710,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1711 != null" >
+        #{storeNumber1711,jdbcType=DECIMAL},
+      </if>
+      <if test="storeNumber1712 != null" >
+        #{storeNumber1712,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0501 != null" >
+        #{actualSalAmt0501,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0502 != null" >
+        #{actualSalAmt0502,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0503 != null" >
+        #{actualSalAmt0503,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0504 != null" >
+        #{actualSalAmt0504,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0505 != null" >
+        #{actualSalAmt0505,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0506 != null" >
+        #{actualSalAmt0506,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0507 != null" >
+        #{actualSalAmt0507,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0508 != null" >
+        #{actualSalAmt0508,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0509 != null" >
+        #{actualSalAmt0509,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0510 != null" >
+        #{actualSalAmt0510,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0511 != null" >
+        #{actualSalAmt0511,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0512 != null" >
+        #{actualSalAmt0512,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal05 != null" >
+        #{actualSalAmtTotal05,jdbcType=DECIMAL},
+      </if>
+      <if test="month05 != null" >
+        #{month05,jdbcType=VARCHAR},
+      </if>
+      <if test="actualSalAmt0601 != null" >
+        #{actualSalAmt0601,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0602 != null" >
+        #{actualSalAmt0602,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0603 != null" >
+        #{actualSalAmt0603,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0604 != null" >
+        #{actualSalAmt0604,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0605 != null" >
+        #{actualSalAmt0605,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0606 != null" >
+        #{actualSalAmt0606,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0607 != null" >
+        #{actualSalAmt0607,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0608 != null" >
+        #{actualSalAmt0608,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0609 != null" >
+        #{actualSalAmt0609,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0610 != null" >
+        #{actualSalAmt0610,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0611 != null" >
+        #{actualSalAmt0611,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0612 != null" >
+        #{actualSalAmt0612,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal06 != null" >
+        #{actualSalAmtTotal06,jdbcType=DECIMAL},
+      </if>
+      <if test="month06 != null" >
+        #{month06,jdbcType=VARCHAR},
+      </if>
+      <if test="actualSalAmt0701 != null" >
+        #{actualSalAmt0701,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0702 != null" >
+        #{actualSalAmt0702,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0703 != null" >
+        #{actualSalAmt0703,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0704 != null" >
+        #{actualSalAmt0704,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0705 != null" >
+        #{actualSalAmt0705,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0706 != null" >
+        #{actualSalAmt0706,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0707 != null" >
+        #{actualSalAmt0707,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0708 != null" >
+        #{actualSalAmt0708,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0709 != null" >
+        #{actualSalAmt0709,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0710 != null" >
+        #{actualSalAmt0710,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0711 != null" >
+        #{actualSalAmt0711,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0712 != null" >
+        #{actualSalAmt0712,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal07 != null" >
+        #{actualSalAmtTotal07,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0801 != null" >
+        #{actualSalAmt0801,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0802 != null" >
+        #{actualSalAmt0802,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0803 != null" >
+        #{actualSalAmt0803,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0804 != null" >
+        #{actualSalAmt0804,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0805 != null" >
+        #{actualSalAmt0805,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0806 != null" >
+        #{actualSalAmt0806,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0807 != null" >
+        #{actualSalAmt0807,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0808 != null" >
+        #{actualSalAmt0808,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0809 != null" >
+        #{actualSalAmt0809,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0810 != null" >
+        #{actualSalAmt0810,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0811 != null" >
+        #{actualSalAmt0811,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0812 != null" >
+        #{actualSalAmt0812,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal08 != null" >
+        #{actualSalAmtTotal08,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0901 != null" >
+        #{actualSalAmt0901,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0902 != null" >
+        #{actualSalAmt0902,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0903 != null" >
+        #{actualSalAmt0903,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0904 != null" >
+        #{actualSalAmt0904,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0905 != null" >
+        #{actualSalAmt0905,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0906 != null" >
+        #{actualSalAmt0906,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0907 != null" >
+        #{actualSalAmt0907,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0908 != null" >
+        #{actualSalAmt0908,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0909 != null" >
+        #{actualSalAmt0909,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0910 != null" >
+        #{actualSalAmt0910,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0911 != null" >
+        #{actualSalAmt0911,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt0912 != null" >
+        #{actualSalAmt0912,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal09 != null" >
+        #{actualSalAmtTotal09,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1001 != null" >
+        #{actualSalAmt1001,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1002 != null" >
+        #{actualSalAmt1002,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1003 != null" >
+        #{actualSalAmt1003,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1004 != null" >
+        #{actualSalAmt1004,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1005 != null" >
+        #{actualSalAmt1005,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1006 != null" >
+        #{actualSalAmt1006,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1007 != null" >
+        #{actualSalAmt1007,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1008 != null" >
+        #{actualSalAmt1008,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1009 != null" >
+        #{actualSalAmt1009,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1010 != null" >
+        #{actualSalAmt1010,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1011 != null" >
+        #{actualSalAmt1011,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1012 != null" >
+        #{actualSalAmt1012,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal10 != null" >
+        #{actualSalAmtTotal10,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1101 != null" >
+        #{actualSalAmt1101,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1102 != null" >
+        #{actualSalAmt1102,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1103 != null" >
+        #{actualSalAmt1103,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1104 != null" >
+        #{actualSalAmt1104,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1105 != null" >
+        #{actualSalAmt1105,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1106 != null" >
+        #{actualSalAmt1106,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1107 != null" >
+        #{actualSalAmt1107,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1108 != null" >
+        #{actualSalAmt1108,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1109 != null" >
+        #{actualSalAmt1109,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1110 != null" >
+        #{actualSalAmt1110,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1111 != null" >
+        #{actualSalAmt1111,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1112 != null" >
+        #{actualSalAmt1112,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal11 != null" >
+        #{actualSalAmtTotal11,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1201 != null" >
+        #{actualSalAmt1201,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1202 != null" >
+        #{actualSalAmt1202,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1203 != null" >
+        #{actualSalAmt1203,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1204 != null" >
+        #{actualSalAmt1204,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1205 != null" >
+        #{actualSalAmt1205,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1206 != null" >
+        #{actualSalAmt1206,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1207 != null" >
+        #{actualSalAmt1207,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1208 != null" >
+        #{actualSalAmt1208,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1209 != null" >
+        #{actualSalAmt1209,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1210 != null" >
+        #{actualSalAmt1210,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1211 != null" >
+        #{actualSalAmt1211,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1212 != null" >
+        #{actualSalAmt1212,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal12 != null" >
+        #{actualSalAmtTotal12,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1301 != null" >
+        #{actualSalAmt1301,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1302 != null" >
+        #{actualSalAmt1302,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1303 != null" >
+        #{actualSalAmt1303,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1304 != null" >
+        #{actualSalAmt1304,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1305 != null" >
+        #{actualSalAmt1305,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1306 != null" >
+        #{actualSalAmt1306,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1307 != null" >
+        #{actualSalAmt1307,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1308 != null" >
+        #{actualSalAmt1308,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1309 != null" >
+        #{actualSalAmt1309,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1310 != null" >
+        #{actualSalAmt1310,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1311 != null" >
+        #{actualSalAmt1311,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1312 != null" >
+        #{actualSalAmt1312,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal13 != null" >
+        #{actualSalAmtTotal13,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1401 != null" >
+        #{actualSalAmt1401,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1402 != null" >
+        #{actualSalAmt1402,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1403 != null" >
+        #{actualSalAmt1403,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1404 != null" >
+        #{actualSalAmt1404,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1405 != null" >
+        #{actualSalAmt1405,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1406 != null" >
+        #{actualSalAmt1406,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1407 != null" >
+        #{actualSalAmt1407,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1408 != null" >
+        #{actualSalAmt1408,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1409 != null" >
+        #{actualSalAmt1409,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1410 != null" >
+        #{actualSalAmt1410,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1411 != null" >
+        #{actualSalAmt1411,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1412 != null" >
+        #{actualSalAmt1412,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal14 != null" >
+        #{actualSalAmtTotal14,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1501 != null" >
+        #{actualSalAmt1501,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1502 != null" >
+        #{actualSalAmt1502,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1503 != null" >
+        #{actualSalAmt1503,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1504 != null" >
+        #{actualSalAmt1504,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1505 != null" >
+        #{actualSalAmt1505,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1506 != null" >
+        #{actualSalAmt1506,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1507 != null" >
+        #{actualSalAmt1507,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1508 != null" >
+        #{actualSalAmt1508,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1509 != null" >
+        #{actualSalAmt1509,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1510 != null" >
+        #{actualSalAmt1510,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1511 != null" >
+        #{actualSalAmt1511,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1512 != null" >
+        #{actualSalAmt1512,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1601 != null" >
+        #{actualSalAmt1601,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1602 != null" >
+        #{actualSalAmt1602,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1603 != null" >
+        #{actualSalAmt1603,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1604 != null" >
+        #{actualSalAmt1604,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1605 != null" >
+        #{actualSalAmt1605,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1606 != null" >
+        #{actualSalAmt1606,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1607 != null" >
+        #{actualSalAmt1607,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1608 != null" >
+        #{actualSalAmt1608,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1609 != null" >
+        #{actualSalAmt1609,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1610 != null" >
+        #{actualSalAmt1610,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1611 != null" >
+        #{actualSalAmt1611,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1612 != null" >
+        #{actualSalAmt1612,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal16 != null" >
+        #{actualSalAmtTotal16,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1701 != null" >
+        #{predictSalAmt1701,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1702 != null" >
+        #{predictSalAmt1702,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1703 != null" >
+        #{predictSalAmt1703,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1704 != null" >
+        #{predictSalAmt1704,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1705 != null" >
+        #{predictSalAmt1705,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1706 != null" >
+        #{predictSalAmt1706,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1707 != null" >
+        #{predictSalAmt1707,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1708 != null" >
+        #{predictSalAmt1708,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1709 != null" >
+        #{predictSalAmt1709,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1710 != null" >
+        #{predictSalAmt1710,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1711 != null" >
+        #{predictSalAmt1711,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1712 != null" >
+        #{predictSalAmt1712,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt17 != null" >
+        #{predictSalAmt17,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1801 != null" >
+        #{predictSalAmt1801,jdbcType=DECIMAL},
+      </if>
+      <if test="predictSalAmt1802 != null" >
+        #{predictSalAmt1802,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1701 != null" >
+        #{actualSalAmt1701,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1702 != null" >
+        #{actualSalAmt1702,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1703 != null" >
+        #{actualSalAmt1703,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1704 != null" >
+        #{actualSalAmt1704,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1705 != null" >
+        #{actualSalAmt1705,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1706 != null" >
+        #{actualSalAmt1706,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1707 != null" >
+        #{actualSalAmt1707,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1708 != null" >
+        #{actualSalAmt1708,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1709 != null" >
+        #{actualSalAmt1709,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1710 != null" >
+        #{actualSalAmt1710,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1711 != null" >
+        #{actualSalAmt1711,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmt1712 != null" >
+        #{actualSalAmt1712,jdbcType=DECIMAL},
+      </if>
+      <if test="actualSalAmtTotal17 != null" >
+        #{actualSalAmtTotal17,jdbcType=DECIMAL},
+      </if>
+      <if test="sameMonth != null" >
+        #{sameMonth,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="mapStore != null" >
+        #{mapStore,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

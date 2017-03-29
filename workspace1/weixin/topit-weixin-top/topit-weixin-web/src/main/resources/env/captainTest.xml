@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<portable-config>
+   <config-file path="WEB-INF/classes/jdbc.properties">
+     <replace key="jdbc_url">jdbc:mysql://192.168.4.146:3306/thrwechat?useUnicode=true&amp;characterEncoding=utf-8</replace>
+     <replace key="jdbc_username">wechatuser</replace>
+     <replace key="jdbc_password">wechat123</replace>
+   </config-file>
+   <config-file path="WEB-INF/classes/common.properties">
+     <replace key="domainStatic">http://twx2.topsports.com.cn/topit-weixin-web</replace>
+     <replace key="weixinmobiledebug">0</replace>
+     <replace key="dataHubUrl">http://192.168.4.77:7000/frdif/n_frdif.asmx</replace>
+     <replace key="userId">test</replace>
+     <replace key="password">00B54E5ADD61AC9C</replace>
+   </config-file>
+</portable-config>
