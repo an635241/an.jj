@@ -54,6 +54,8 @@ public class DataView extends Frame {
 	
 	private Button openSerialButton = new Button("打开串口");
 	
+	private Button openSerialButton1 = new Button("发送数据");
+	
 	Image offScreen = null;	//重画时的画布
 	
 	//设置window的icon
@@ -198,12 +200,51 @@ public class DataView extends Frame {
 			}
 		});
 		
+		openSerialButton1.setBounds(250, 550, 300, 50);
+		openSerialButton1.setBackground(Color.lightGray);
+		openSerialButton1.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		openSerialButton1.setForeground(Color.darkGray);
+		add(openSerialButton1);
+		openSerialButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String sendStr = "010300000002C40B";
+				try {
+					SerialTool.sendToPort(serialPort, hexStringToBytes(sendStr));
+					System.out.print("\n"+sendStr+"\n");
+				} catch (SendDataToSerialPortFailure e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SerialPortOutputStreamCloseFailure e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
 		
 		this.setResizable(false);
 		
 		new Thread(new RepaintThread()).start();	//启动重画线程
 		
 	}
+	
+	public static byte[] hexStringToBytes(String hexString) {  
+	    if (hexString == null || hexString.equals("")) {  
+	        return null;  
+	    }  
+	    hexString = hexString.toUpperCase();  
+	    int length = hexString.length() / 2;  
+	    char[] hexChars = hexString.toCharArray();  
+	    byte[] d = new byte[length];  
+	    for (int i = 0; i < length; i++) {  
+	        int pos = i * 2;  
+	        d[i] = (byte) (charToByte(hexChars[pos]) << 4 | charToByte(hexChars[pos + 1]));  
+	    }  
+	    return d;  
+	}  
+	public static byte charToByte(char c) {  
+	    return (byte) "0123456789ABCDEF".indexOf(c);  
+	}  
 	
 	/**
 	 * 画出主界面组件元素

@@ -3,6 +3,7 @@ package serialPort;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.TooManyListenersException;
@@ -177,7 +178,8 @@ public class SerialTool {
             
         	while (bufflenth != 0) {                             
                 bytes = new byte[bufflenth];	//初始化byte数组为buffer中数据的长度
-                in.read(bytes);
+               int len = in.read(bytes);
+                System.out.print("\n"+new String(bytes, 0, len).trim()+"\n");
                 bufflenth = in.available();
         	} 
         } catch (IOException e) {
@@ -193,10 +195,39 @@ public class SerialTool {
         	}
 
         }
-
+        String a = Long.toString((int) bytes[3] & 0xff, 16)+Long.toString((int) bytes[4] & 0xff, 16);
+        String b = Long.toString((int) bytes[5] & 0xff, 16)+Long.toString((int) bytes[6] & 0xff, 16);
+       System.out.print("温度："+Integer.valueOf(a,16)*1.0/10+"\n");
+       System.out.print("湿度："+Integer.valueOf(b,16)*1.0/10);
+       
+        toHex(bytes,0,bytes.length);
         return bytes;
 
     }
+    public static final void toHex(byte[] data, int off, int length) {  
+        // double size, two bytes (hex range) for one byte  
+        StringBuffer buf = new StringBuffer(data.length * 2);  
+        for (int i = off; i < length; i++) {  
+            // don't forget the second hex digit  
+            if (((int) data[i] & 0xff) < 0x10) {  
+                buf.append("0");  
+            }  
+            buf.append(Long.toString((int) data[i] & 0xff, 16));  
+            if (i < data.length - 1) {  
+                buf.append(" ");  
+            }  
+        }  
+      System.out.print("\n"+buf);
+    }  
+    public static String bytes2hex01(byte[] bytes)  
+    {  
+        /** 
+         * 第一个参数的解释，记得一定要设置为1 
+         *  signum of the number (-1 for negative, 0 for zero, 1 for positive). 
+         */  
+        BigInteger bigInteger = new BigInteger(1, bytes);  
+        return bigInteger.toString(16);  
+    }  
     
     /**
      * 添加监听器

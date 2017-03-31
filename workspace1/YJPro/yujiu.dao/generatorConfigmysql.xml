@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!--<properties url="file:///d:/yougouconf/mybatis-ibator-conf.properties"/>
+	 <classPathEntry location="${oracle.jar.path}" /> -->
+	<context id="context1" targetRuntime="MyBatis3">
+		
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- 
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.210.64)(PORT = 1521)))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = orcl)))"
+			userId="USR_ZONE_WMS_DEV" password="usr_zone_wms_dev" />
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/demo"
+			userId="demo_user" password="123456" />
+		 -->
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://172.17.210.99:3306/demo"
+			userId="demo_user" password="123456" /> -->
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.4.183:3306/wechathr"
+			userId="hruser" password="hruser" /> -->
+			<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3307/test"
+			userId="an.jj" password="an888888" />
+		
+		<javaTypeResolver > 
+        <property name="forceBigDecimals" value="false" /> 
+          <!-- 
+          	number(默认为38位),当长度超过18位时无法强制转换decimal
+                                默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer 
+            true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal 
+        	--> 
+        </javaTypeResolver>
+			
+		<javaModelGenerator targetPackage="com.yujiu.model"
+			targetProject="yujiu.model" /> 
+		<sqlMapGenerator targetPackage="com.yujiu.dao" targetProject="yujiu.dao/src/main/resources"/>
+		<javaClientGenerator targetPackage="com.yujiu.dao"
+			targetProject="yujiu.dao" type="XMLMAPPER">			<property name="interfaceExtendSupInterface" value="com.yujiu.base.dao.BaseCurdMapper"/>
+			<property name="enableInterfaceSupInterfaceGenericity" value="false"/>
+			<property name="exclusionsMethods" value="countByQuery,deleteByQuery,deleteByPrimaryKey,insert,insertSelective,selectByQuery,selectByQueryWithBLOBs,selectByPrimaryKey,selectCount,selectByPage,updateByQuery,updateByQueryWithBLOBs,updateByPrimaryKeySelective,updateByPrimaryKeyWithBLOBs"/> 
+		</javaClientGenerator>
+			
+	    <!-- <sqlMapConfigFileAppend targetPackage="META-INF" targetProject="logistics-template-new-dal/src/main/resources" confileFileName="mybatis-template-dal-config.xml" confileFilePackagePath="mapper"/> -->
+	    
+		<javaServiceGenerator targetPackage="com.yujiu.service" targetProject="yujiu.service" 
+		interfaceExtendSupInterface="" enableInterfaceSupInterfaceGenericity="false"
+		extendSupClass="com.yujiu.service.BaseCurdService" enableSupClassGenericity="false" />
+		
+		<javaManagerGenerator targetPackage="com.yougou.logistics.template.manager" targetProject="logistics-template-new-manager" 
+		interfaceExtendSupInterface="com.yougou.logistics.base.manager.BaseCrudManager" enableInterfaceSupInterfaceGenericity="false"
+		extendSupClass="com.yougou.logistics.base.manager.BaseCrudManagerImpl" enableSupClassGenericity="false" />
+			
+		<javaControllerGenerator targetPackage="com.yujiu.controller" targetProject="yujiu.web" 
+		extendSupClass="com.yujiu.web.controller.BaseCurdController" enableSupClassGenericity="true" />
+		<!--
+		<table schema="dev1" tableName="logistics_base" domainObjectName="LogisticsBase" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<columnOverride column="BASE_ID" javaType="Long"></columnOverride>
+		</table> 
+		-->
+        
+        <tableSetting isSchema="true" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<prop name="replaceTablePrefix">
+				<list>
+					<prefix name="" value="" />
+				</list>
+			</prop>
+			<!-- 忽略schema，避免在xml中出现schema.表名      -->  
+			<prop name="ignoreGeneratorSchema" value="true"/>
+		</tableSetting>
+        
+	</context>
+</generatorConfiguration>

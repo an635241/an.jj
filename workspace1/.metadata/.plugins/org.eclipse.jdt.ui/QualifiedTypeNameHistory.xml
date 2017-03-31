@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="com.topsports.weixin.dao2.EmployeeMapper"/>
 <fullyQualifiedTypeName name="com.topsports.weixin.service.EmployeeService"/>
 <fullyQualifiedTypeName name="com.topsports.weixin.common.model2.Employee"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.topsports.weixin.dao2.StoreSalSummaryMapper"/>
 <fullyQualifiedTypeName name="com.topsports.weixin.service.StoreSalSummaryService"/>
 <fullyQualifiedTypeName name="com.topsports.weixin.common.model2.StoreSalSummary"/>
@@ -12,11 +11,20 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="org.apache.poi.ss.formula.functions.T"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
 <fullyQualifiedTypeName name="com.mongodb.util.Hash"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.awt.print.Pageable"/>
+<fullyQualifiedTypeName name="com.yujiu.base.service.BaseCurdService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="com.yujiu.base.web.controller.BaseCurdController"/>
+<fullyQualifiedTypeName name="com.yujiu.model.Test"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.apache.xmlbeans.impl.xb.ltgfmt.impl.TestsDocumentImpl.TestsImpl"/>
+<fullyQualifiedTypeName name="com.yujiu.service.TestService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
 </qualifiedTypeNameHistroy>

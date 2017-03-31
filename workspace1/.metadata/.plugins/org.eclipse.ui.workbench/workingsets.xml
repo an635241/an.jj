@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1485224516155_0" label="hrweixin" name="hrweixin">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-common" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-dao" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-web" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/hrweixin" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-wechatutil" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-service" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/topit-weixin-common-api" type="4"/>
-</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1485224516155_0" label="hrweixin" name="hrweixin"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1485237512318_1" label="Window Working Set" name="Aggregate for window 1485237512317"/>
 </workingSetManager>

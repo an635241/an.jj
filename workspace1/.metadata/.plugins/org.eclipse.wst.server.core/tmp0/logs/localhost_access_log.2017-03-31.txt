@@ -1,0 +1,16 @@
+127.0.0.1 - - [31/Mar/2017:10:15:28 +0800] "GET / HTTP/1.1" 404 994
+192.168.7.156 - - [31/Mar/2017:10:16:05 +0800] "GET /topit-weixin-web/index?wechatNo=1 HTTP/1.1" 404 1038
+192.168.7.156 - - [31/Mar/2017:10:16:05 +0800] "GET /favicon.ico HTTP/1.1" 404 1016
+192.168.7.156 - - [31/Mar/2017:10:16:23 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 15515
+127.0.0.1 - - [31/Mar/2017:10:26:29 +0800] "GET / HTTP/1.1" 404 994
+192.168.7.156 - - [31/Mar/2017:10:27:11 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 10224
+192.168.7.156 - - [31/Mar/2017:10:29:19 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 2276
+127.0.0.1 - - [31/Mar/2017:11:00:36 +0800] "GET / HTTP/1.1" 404 994
+192.168.7.156 - - [31/Mar/2017:11:01:06 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 2276
+192.168.7.156 - - [31/Mar/2017:11:04:32 +0800] "GET /yujiu.web/test/test HTTP/1.1" 200 9
+192.168.7.156 - - [31/Mar/2017:11:06:56 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 2288
+192.168.7.156 - - [31/Mar/2017:11:08:53 +0800] "GET /yujiu.web/test/list HTTP/1.1" 500 2276
+192.168.7.156 - - [31/Mar/2017:11:11:06 +0800] "GET /yujiu.web/test/list HTTP/1.1" 200 142
+192.168.7.156 - - [31/Mar/2017:11:11:53 +0800] "GET /yujiu.web/test/test HTTP/1.1" 500 2276
+192.168.7.156 - - [31/Mar/2017:11:12:24 +0800] "GET /yujiu.web/test/test HTTP/1.1" 200 142
+192.168.7.156 - - [31/Mar/2017:11:13:41 +0800] "GET /topit-weixin-web/mobile/shopsalinfo/getAttentionShops?UserID=&periodsdate= HTTP/1.1" 404 1100

@@ -1,8 +1,6 @@
 #Tomcat publish data
-#Wed Mar 29 17:27:45 CST 2017
-org.eclipse.jst.j2ee.server\:topit-weixin-service=WEB-INF/lib/topit-weixin-service-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:topit-weixin-wechatutil=WEB-INF/lib/topit-weixin-wechatutil-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:/binary\:D\:\\Lipsion\\repository\\org\\springframework\\spring-web\\4.1.1.RELEASE\\spring-web-4.1.1.RELEASE.jar=WEB-INF/lib/spring-web-4.1.1.RELEASE.jar
-org.eclipse.jst.j2ee.server\:topit-weixin-common-api=WEB-INF/lib/topit-weixin-common-api-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:topit-weixin-common=WEB-INF/lib/topit-weixin-common-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:topit-weixin-dao=WEB-INF/lib/topit-weixin-dao-0.0.1-SNAPSHOT.jar
+#Fri Mar 31 11:12:08 CST 2017
+org.eclipse.jst.j2ee.server\:yujiu.service=WEB-INF/lib/yujiu.service-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:yujiu.common=WEB-INF/lib/yujiu.common-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:yujiu.dao=WEB-INF/lib/yujiu.dao-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:yujiu.model=WEB-INF/lib/yujiu.model-0.0.1-SNAPSHOT.jar
