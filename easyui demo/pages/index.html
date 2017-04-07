@@ -6,6 +6,20 @@
 <link rel="stylesheet" type="text/css" href="../easyui/1.3.4/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="../css/wu.css" />
 <link rel="stylesheet" type="text/css" href="../css/icon.css" />
+<style>
+#wu-category-tree .tree-folder {
+  background: url('../css/icons/camera.png') no-repeat;
+}
+#wu-category-tree .tree-file {
+  background: url('../css/icons/attach.png') no-repeat;
+}
+#wu-category-tree1 .tree-folder {
+	background: url('../css/icons/text_list_bullets.png') no-repeat;
+}
+#wu-category-tree1 .tree-file {
+  background: url('../css/icons/device_stylus.png') no-repeat;
+}
+</style>
 </head>
 <body class="easyui-layout">
 	<!-- begin of header -->
@@ -15,8 +29,8 @@
         	<font style="margin: 0;color:white;font-size: 9px;">SHANG HAI YOU JIU ZHI NENG KE JI YOU XIAN GONG SI</font>
         </div>
         <div class="wu-header-right">
-        	<p><strong class="easyui-tooltip" title="2条未读消息">admin</strong>，欢迎您！</p>
-            <p><a href="#">网站首页</a>|<a href="#">帮助中心</a>|<a href="#">安全退出</a></p>
+        	<p><strong class="easyui-tooltip" id="username">admin</strong>，欢迎您！</p>
+            <p><a href="#">网站首页</a>|<a href="#">帮助中心</a>|<a href="javascript:exit()">安全退出</a></p>
         </div>
         <!--<div class="wu-header-bottom" style="width: 100%;border-top: 1px solid white;">
         		<a href="#" class="easyui-linkbutton"  data-options="plain:true" style="color:white;width: 100px;"><font style="font-size: 14px;font-weight: 900;">设置</font></a>
@@ -31,11 +45,26 @@
         	<div title="基础设置" data-options="iconCls:'icon-wrench'" style="padding:5px;">  	
     			<ul class="easyui-tree wu-side-tree">
                 	<!--<li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="pages.html" iframe="0">页面管理</a></li>-->
-                    <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="pages.html" iframe="0">用户管理</a></li>
-                    <li iconCls="icon-computer"><a href="javascript:void(0)" data-icon="icon-users" data-link="device.html" iframe="0">设备管理</a></li>
-                    <li iconCls="icon-point"><a href="javascript:void(0)" data-icon="icon-point" data-link="collections.html" iframe="0">数据采集管理</a></li>
-                    <li iconCls="icon-status"><a href="javascript:void(0)" data-icon="icon-status" data-link="status.html" iframe="0">状态采集管理</a></li>
+                    <li iconCls="icon-database-gear"><a href="javascript:void(0)" data-icon="icon-point" data-link="collections.html" iframe="0">数据采集管理</a></li>
+                    <li iconCls="icon-arrow-refresh"><a href="javascript:void(0)" data-icon="icon-status" data-link="status.html" iframe="0">状态采集管理</a></li>
+               </ul>
+            </div>
+            <div title="设备管理" data-options="iconCls:'icon-computer-wrench'" style="padding:5px;">  	
+    			<ul class="easyui-tree wu-side-tree">
+                	<!--<li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="pages.html" iframe="0">页面管理</a></li>-->
+                    <li iconCls="icon-computer-wrench"><a href="javascript:void(0)" data-icon="icon-users" data-link="device.html" iframe="0">设备管理</a></li>
+                </ul>
+            </div>
+            <div title="工具" data-options="iconCls:'icon-advancedsettings'" style="padding:5px;">  	
+    			<ul class="easyui-tree wu-side-tree">
+                	<!--<li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="pages.html" iframe="0">页面管理</a></li>-->
                     <li iconCls="icon-application-osx"><a href="javascript:void(0)" data-icon="icon-application-osx" data-link="temp/layout-3.html" iframe="0">操作日志</a></li>
+                </ul>
+            </div>
+            <div title="用户管理" data-options="iconCls:'icon-users'" style="padding:5px;">  	
+    			<ul class="easyui-tree wu-side-tree">
+                	<!--<li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="pages.html" iframe="0">页面管理</a></li>-->
+                    <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="users.html" iframe="0">用户管理</a></li>
                 </ul>
             </div>
         </div>
@@ -55,6 +84,8 @@
 				                    <li><span>空调</span></li>
 				                </ul>
 				        </li>
+				    </ul>
+				    <ul id="wu-category-tree1" class="easyui-tree" data-options="lines:true">
 				        <li><span>设备列表</span>
 				                <ul>
 				                    <li><span>温湿度1</span></li>
@@ -84,7 +115,7 @@
     		if(localStorage.getItem("password")==null||localStorage.getItem("password")==""){
     			window.location.href="login.html";
     		}
-    		
+    		$("#username").html(localStorage.getItem("username"));
 			$('.wu-side-tree a').bind("click",function(){
 				var title = $(this).text();
 				var url = $(this).attr('data-link');
@@ -139,10 +170,19 @@
 				iconCls:'icon-reload',
 				border:false,
 				handler:function(){
-					$('#wu-datagrid').datagrid('reload');
+					var tab = $('#wu-tabs').tabs('getSelected');  // 获取选择的面板
+					tab.panel('refresh');
 				}
 			}]
 		});
+		function exit(){
+			localStorage.setItem("username","");
+			localStorage.setItem("userid","");
+			localStorage.setItem("password","");
+			window.opener=null;
+			window.open('','_self');
+			window.close();
+		}
     </script>
 </body>
 </html>

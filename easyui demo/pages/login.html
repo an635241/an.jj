@@ -73,12 +73,13 @@
     	if(user==null||pass==null||user==''||pass==''){
     		$("#message").html("请输入用户名和密码");return;
     	}
-    	localStorage.setItem("username", user);
+    	localStorage.setItem("name", user);
     	if(issavepass==1){
     		localStorage.setItem("pass", pass);
     	}
     	$.getJSON(Constants.URL+"users/biz",{"username":user,"password":pass},function(data){
     		if(data.length>0){
+    			localStorage.setItem("username", user);
     			localStorage.setItem("password", pass);
     			localStorage.setItem("userid", data[0].id);
     			$.getJSON(Constants.URL+"users/biz",{"username":user,"password":pass,"loginfo":"登陆","username":user,"userid":data[0].id},function(){

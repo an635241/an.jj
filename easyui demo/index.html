@@ -148,6 +148,9 @@
 				border:false,
 				handler:function(){
 					$('#wu-datagrid').datagrid('reload');
+					var tab = $('#wu-tabs').tabs('getSelected');  // 获取选择的面板
+					tab.panel('refresh', 'get_content.php');
+
 				}
 			}]
 		});
