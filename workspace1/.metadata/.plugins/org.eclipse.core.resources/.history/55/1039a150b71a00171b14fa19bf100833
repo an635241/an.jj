@@ -1,0 +1,23 @@
+package com.yujiu.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.yujiu.base.web.controller.BaseCurdController;
+import com.yujiu.model.SerialPort;
+import com.yujiu.service.CollectionSevice;
+
+@Controller
+@RequestMapping(value="/serialports")
+public class CollectionController extends BaseCurdController<SerialPort> {
+	@Autowired
+	private CollectionSevice serialPortSevice;
+
+	@Override
+	protected BaseCurdController<SerialPort>.CrudInfo init() {
+		// TODO Auto-generated method stub
+		return new CrudInfo("serialports/", serialPortSevice);
+	}
+
+}

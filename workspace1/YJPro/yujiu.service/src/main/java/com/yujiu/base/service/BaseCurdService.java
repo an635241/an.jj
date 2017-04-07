@@ -125,11 +125,7 @@ public abstract class BaseCurdService {
 	
 	public <ModelType> List<ModelType> findByPage(SimplePage page, String orderByField,
 			String orderBy,Map<String,Object> params) throws ServiceException {
-		try {
-			return this.findByPage(page, orderByField, orderBy, params);
-		} catch (ServiceException e) {
-			throw e;
-		}
+			return mapper.selectByPage(page, orderByField, orderBy, params);
 	}
 
 

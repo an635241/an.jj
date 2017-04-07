@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yujiu.dao.DeviceStatusMapper" >
+  <resultMap id="BaseResultMap" type="com.yujiu.model.DeviceStatus" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="device_id" property="deviceId" jdbcType="INTEGER" />
+    <result column="zero_rank" property="zeroRank" jdbcType="INTEGER" />
+    <result column="zero_event" property="zeroEvent" jdbcType="VARCHAR" />
+    <result column="one_rank" property="oneRank" jdbcType="INTEGER" />
+    <result column="one_event" property="oneEvent" jdbcType="VARCHAR" />
+    <result column="command" property="command" jdbcType="VARCHAR" />
+    <result column="command_param" property="commandParam" jdbcType="VARCHAR" />
+    <result column="zerotoone" property="zerotoone" jdbcType="INTEGER" />
+    <result column="onetozero" property="onetozero" jdbcType="INTEGER" />
+    <result column="shield" property="shield" jdbcType="TINYINT" />
+    <result column="historical_data" property="historicalData" jdbcType="TINYINT" />
+    <result column="historical_interval" property="historicalInterval" jdbcType="INTEGER" />
+    <result column="device_name" property="deviceName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, device_id, zero_rank, zero_event, one_rank, one_event, command, command_param, 
+    zerotoone, onetozero, shield, historical_data, historical_interval, device_name
+  </sql>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="null!=params.queryCondition and ''!=params.queryCondition" >
+        ${params.queryCondition}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM device_status
+    WHERE id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer" >
+    SELECT COUNT(1) as s FROM device_status WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM device_status WHERE 1=1 
+    <include refid="condition" />
+    <if test="orderByField != null and ''!=orderByField" >
+      ORDER BY ${orderByField}
+      <if test="orderByField" >
+        ${orderBy}
+      </if>
+    </if>
+     LIMIT #{page.startRowNum} ,#{page.pageSize} 
+  </select>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM device_status WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM device_status
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByPrimarayKeyForModel" parameterType="com.yujiu.model.DeviceStatus" >
+    DELETE FROM device_status
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yujiu.model.DeviceStatus" >
+    INSERT INTO device_status (id, name, device_id, 
+      zero_rank, zero_event, one_rank, 
+      one_event, command, command_param, 
+      zerotoone, onetozero, shield, 
+      historical_data, historical_interval, device_name
+      )
+    VALUES (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{deviceId,jdbcType=INTEGER}, 
+      #{zeroRank,jdbcType=INTEGER}, #{zeroEvent,jdbcType=VARCHAR}, #{oneRank,jdbcType=INTEGER}, 
+      #{oneEvent,jdbcType=VARCHAR}, #{command,jdbcType=VARCHAR}, #{commandParam,jdbcType=VARCHAR}, 
+      #{zerotoone,jdbcType=INTEGER}, #{onetozero,jdbcType=INTEGER}, #{shield,jdbcType=TINYINT}, 
+      #{historicalData,jdbcType=TINYINT}, #{historicalInterval,jdbcType=INTEGER}, #{deviceName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yujiu.model.DeviceStatus" >
+    INSERT INTO device_status
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="deviceId != null" >
+        device_id,
+      </if>
+      <if test="zeroRank != null" >
+        zero_rank,
+      </if>
+      <if test="zeroEvent != null" >
+        zero_event,
+      </if>
+      <if test="oneRank != null" >
+        one_rank,
+      </if>
+      <if test="oneEvent != null" >
+        one_event,
+      </if>
+      <if test="command != null" >
+        command,
+      </if>
+      <if test="commandParam != null" >
+        command_param,
+      </if>
+      <if test="zerotoone != null" >
+        zerotoone,
+      </if>
+      <if test="onetozero != null" >
+        onetozero,
+      </if>
+      <if test="shield != null" >
+        shield,
+      </if>
+      <if test="historicalData != null" >
+        historical_data,
+      </if>
+      <if test="historicalInterval != null" >
+        historical_interval,
+      </if>
+      <if test="deviceName != null" >
+        device_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="zeroRank != null" >
+        #{zeroRank,jdbcType=INTEGER},
+      </if>
+      <if test="zeroEvent != null" >
+        #{zeroEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="oneRank != null" >
+        #{oneRank,jdbcType=INTEGER},
+      </if>
+      <if test="oneEvent != null" >
+        #{oneEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="command != null" >
+        #{command,jdbcType=VARCHAR},
+      </if>
+      <if test="commandParam != null" >
+        #{commandParam,jdbcType=VARCHAR},
+      </if>
+      <if test="zerotoone != null" >
+        #{zerotoone,jdbcType=INTEGER},
+      </if>
+      <if test="onetozero != null" >
+        #{onetozero,jdbcType=INTEGER},
+      </if>
+      <if test="shield != null" >
+        #{shield,jdbcType=TINYINT},
+      </if>
+      <if test="historicalData != null" >
+        #{historicalData,jdbcType=TINYINT},
+      </if>
+      <if test="historicalInterval != null" >
+        #{historicalInterval,jdbcType=INTEGER},
+      </if>
+      <if test="deviceName != null" >
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yujiu.model.DeviceStatus" >
+    UPDATE device_status
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceId != null" >
+        device_id = #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="zeroRank != null" >
+        zero_rank = #{zeroRank,jdbcType=INTEGER},
+      </if>
+      <if test="zeroEvent != null" >
+        zero_event = #{zeroEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="oneRank != null" >
+        one_rank = #{oneRank,jdbcType=INTEGER},
+      </if>
+      <if test="oneEvent != null" >
+        one_event = #{oneEvent,jdbcType=VARCHAR},
+      </if>
+      <if test="command != null" >
+        command = #{command,jdbcType=VARCHAR},
+      </if>
+      <if test="commandParam != null" >
+        command_param = #{commandParam,jdbcType=VARCHAR},
+      </if>
+      <if test="zerotoone != null" >
+        zerotoone = #{zerotoone,jdbcType=INTEGER},
+      </if>
+      <if test="onetozero != null" >
+        onetozero = #{onetozero,jdbcType=INTEGER},
+      </if>
+      <if test="shield != null" >
+        shield = #{shield,jdbcType=TINYINT},
+      </if>
+      <if test="historicalData != null" >
+        historical_data = #{historicalData,jdbcType=TINYINT},
+      </if>
+      <if test="historicalInterval != null" >
+        historical_interval = #{historicalInterval,jdbcType=INTEGER},
+      </if>
+      <if test="deviceName != null" >
+        device_name = #{deviceName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yujiu.model.DeviceStatus" >
+    UPDATE device_status
+    SET name = #{name,jdbcType=VARCHAR},
+      device_id = #{deviceId,jdbcType=INTEGER},
+      zero_rank = #{zeroRank,jdbcType=INTEGER},
+      zero_event = #{zeroEvent,jdbcType=VARCHAR},
+      one_rank = #{oneRank,jdbcType=INTEGER},
+      one_event = #{oneEvent,jdbcType=VARCHAR},
+      command = #{command,jdbcType=VARCHAR},
+      command_param = #{commandParam,jdbcType=VARCHAR},
+      zerotoone = #{zerotoone,jdbcType=INTEGER},
+      onetozero = #{onetozero,jdbcType=INTEGER},
+      shield = #{shield,jdbcType=TINYINT},
+      historical_data = #{historicalData,jdbcType=TINYINT},
+      historical_interval = #{historicalInterval,jdbcType=INTEGER},
+      device_name = #{deviceName,jdbcType=VARCHAR}
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

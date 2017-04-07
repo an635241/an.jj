@@ -1,4 +1,0 @@
-package com.yujiu.service;
-
-public interface TestService {
-}

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EasyUI Web Admin Power by Wuyeguo</title>
+<link rel="stylesheet" type="text/css" href="../easyui/1.3.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../css/wu.css" />
+<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+</head>
+<body class="easyui-layout">
+	<!-- begin of header -->
+	<div class="wu-header" data-options="region:'north',border:false,split:true">
+    	<div class="wu-header-left">
+        	<h1 style="margin-bottom: 2px;">上海御玖智能科技有限公司</h1>
+        	<font style="margin: 0;color:white;font-size: 9px;">SHANG HAI YOU JIU ZHI NENG KE JI YOU XIAN GONG SI</font>
+        </div>
+        <div class="wu-header-right">
+        	<p><strong class="easyui-tooltip" title="2条未读消息">admin</strong>，欢迎您！</p>
+            <p><a href="#">网站首页</a>|<a href="#">帮助中心</a>|<a href="#">安全退出</a></p>
+        </div>
+        <!--<div class="wu-header-bottom" style="width: 100%;border-top: 1px solid white;">
+        		<a href="#" class="easyui-linkbutton"  data-options="plain:true" style="color:white;width: 100px;"><font style="font-size: 14px;font-weight: 900;">设置</font></a>
+        		<a href="#" class="easyui-linkbutton"  data-options="plain:true" style="color:white;width: 100px;"><font style="font-size: 14px;font-weight: 900;">事件查看</font></a>
+        		<a href="#" class="easyui-linkbutton"  data-options="plain:true" style="color:white;width: 100px;"><font style="font-size: 14px;font-weight: 900;">用户管理</font></a>
+        		<a href="#" class="easyui-linkbutton"  data-options="plain:true" style="color:white;width: 100px;"><font style="font-size: 14px;font-weight: 900;">工具</font></a>
+
+        </div>-->
+  	</div>
+    <div class="wu-sidebar" data-options="region:'west',split:true,border:true,title:'导航菜单'"> 
+    	<div class="easyui-accordion" data-options="border:false,fit:true"> 
+        	<div title="基础设置" data-options="iconCls:'icon-wrench'" style="padding:5px;">  	
+    			<ul class="easyui-tree wu-side-tree">
+                	<!--<li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="pages.html" iframe="0">页面管理</a></li>-->
+                    <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="pages.html" iframe="0">用户管理</a></li>
+                    <li iconCls="icon-computer"><a href="javascript:void(0)" data-icon="icon-users" data-link="device.html" iframe="0">设备管理</a></li>
+                    <li iconCls="icon-point"><a href="javascript:void(0)" data-icon="icon-point" data-link="collections.html" iframe="0">数据采集管理</a></li>
+                    <li iconCls="icon-status"><a href="javascript:void(0)" data-icon="icon-status" data-link="status.html" iframe="0">状态采集管理</a></li>
+                    <li iconCls="icon-application-osx"><a href="javascript:void(0)" data-icon="icon-application-osx" data-link="temp/layout-3.html" iframe="0">操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- begin of main -->
+    <div class="wu-main" data-options="region:'center'">
+        <div id="wu-tabs" class="easyui-tabs" data-options="border:false,fit:true">  
+            <div title="首页" data-options="closable:false,iconCls:'icon-tip',cls:'pd3'">
+            	<div class="easyui-layout" data-options="fit:true">
+            	<div data-options="region:'west',border:true,split:true," title="监控管理" style="width:150px; padding:5px;">
+        			<ul id="wu-category-tree" class="easyui-tree" data-options="lines:true">
+				        <li>
+				            <span>监控内容</span>
+				                <ul>
+				                    <li><span>温湿度</span></li>
+				                    <li><span>漏水</span></li>
+				                    <li><span>空调</span></li>
+				                </ul>
+				        </li>
+				        <li><span>设备列表</span>
+				                <ul>
+				                    <li><span>温湿度1</span></li>
+				                    <li><span>温湿度2</span></li>
+				                    <li><span>漏水检测</span></li>
+				                </ul>
+				        </li>
+        			</ul>
+    			</div>
+    			 <div data-options="region:'center',border:false">
+            		<img src="../images/bg1.png" style="float: left;" />
+            	</div>
+            </div></div>
+        </div>
+    </div>
+     <!-- begin of footer -->
+	<div class="wu-footer" data-options="region:'south',border:true,split:true">
+    	&copy; 上海御玖智能科技有限公司
+    </div>
+    <script type="text/javascript" src="../js/libs/jquery203.js"></script>
+    <script type="text/javascript" src="../easyui/1.3.4/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/functionjs.js"></script>
+    <script type="text/javascript" src="../js/controllers/Constants.js"></script>
+    <script>
+    	$(function(){
+    		if(localStorage.getItem("password")==null||localStorage.getItem("password")==""){
+    			window.location.href="login.html";
+    		}
+    		
+			$('.wu-side-tree a').bind("click",function(){
+				var title = $(this).text();
+				var url = $(this).attr('data-link');
+				var iconCls = $(this).attr('data-icon');
+				var iframe = $(this).attr('iframe')==1?true:false;
+				addTab(title,url,iconCls,iframe);
+			});	
+		})
+    	
+    	/**
+		* Name 添加菜单选项
+		* Param title 名称
+		* Param href 链接
+		* Param iconCls 图标样式
+		* Param iframe 链接跳转方式（true为iframe，false为href）
+		*/	
+		function addTab(title, href, iconCls, iframe){
+			var tabPanel = $('#wu-tabs');
+			if(!tabPanel.tabs('exists',title)){
+				var content = '<iframe scrolling="auto" frameborder="0"  src="'+ href +'" style="width:100%;height:100%;"></iframe>';
+				if(iframe){
+					tabPanel.tabs('add',{
+						title:title,
+						content:content,
+						iconCls:iconCls,
+						fit:true,
+						cls:'pd3',
+						closable:true
+					});
+				}
+				else{
+					tabPanel.tabs('add',{
+						title:title,
+						href:href,
+						iconCls:iconCls,
+						fit:true,
+						cls:'pd3',
+						closable:true
+					});
+				}
+			}
+			else
+			{
+				tabPanel.tabs('select',title);
+			}
+		}
+		/**
+		* Name 选项卡初始化
+		*/
+		$('#wu-tabs').tabs({
+			tools:[{
+				iconCls:'icon-reload',
+				border:false,
+				handler:function(){
+					$('#wu-datagrid').datagrid('reload');
+				}
+			}]
+		});
+    </script>
+</body>
+</html>

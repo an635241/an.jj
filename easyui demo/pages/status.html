@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>状态采集管理</title>
+		<link rel="stylesheet" type="text/css" href="../easyui/1.3.4/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/wu.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+	</head>
+	<body>
+<div class="easyui-layout" data-options="fit:true">
+    <!-- Begin of toolbar -->
+    <div id="wu-toolbar-2">
+        <div class="wu-toolbar-button">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="openAdd()" plain="true">添加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit()" plain="true">修改</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" onclick="openRemove()" plain="true">删除</a>
+        </div>
+    </div>
+    <!-- End of toolbar -->
+    <table id="wu-datagrid-2" class="easyui-datagrid" toolbar="#wu-toolbar-2" data-options="fitColumns:true,singleSelect:true,rownumbers:true">
+    <thead>   
+        <tr>   
+            <th data-options="field:'name',width:100">状态项名称</th>   
+            <th data-options="field:'deviceName',width:100">设备名称</th>   
+            <th data-options="field:'zeroRank',width:100">0级别</th>   
+            <th data-options="field:'zeroEvent',width:100">0事件</th>   
+            <th data-options="field:'oneRank',width:100">1级别</th>   
+            <th data-options="field:'oneEvent',width:100">1事件</th>   
+            <th data-options="field:'command',width:100">命令</th>   
+            <th data-options="field:'commandParam',width:100">命令参数</th>    
+            <th data-options="field:'zerotoone',width:100">0变1延时</th>   
+            <th data-options="field:'onetozero',width:100">1变0延时</th>   
+            <th data-options="field:'shield',width:100,formatter:function(value,row,index){if(value==0)return '不屏蔽';else{return '屏蔽'}}">是否屏蔽</th>
+            <th data-options="field:'historicalData',width:100,formatter:function(value,row,index){if(value==0)return '不保存';else{return '保存'}}">是否保存历史数据</th>   
+            <th data-options="field:'historicalChange',width:100">保存历史数据变化率</th>   
+            <th data-options="field:'historicalInterval',width:100">保存数据历史间隔</th>
+        </tr>   
+    </thead>   
+    </table>
+</div>
+<!-- Begin of easyui-dialog -->
+<div id="wu-dialog-2" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:800px; padding:10px;">
+	<form id="wu-form-2" method="post">
+        <table>
+            <tr>
+                <td width="60" align="right">数据项名称:</td>
+                <td><input type="text" name="name" class="wu-text" />
+                	<input type="hidden" name="id">
+                </td>
+                <td width="60" align="right">关联设备:</td>
+                <td><input id="deviceId" class="easyui-combobox" name="deviceId"   
+    data-options="valueField:'id',textField:'name'" style="width:268px;" />  </td>
+            </tr>
+            <tr>
+                <td align="right">0级别:</td>
+                <td><input type="text" name="zeroRank" class="wu-text" /></td>
+                <td align="right">0事件:</td>
+                <td><input type="text" name="zeroEvent" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">1级别:</td>
+                <td><input type="text" name="oneRank" class="wu-text" /></td>
+                <td align="right">1事件:</td>
+                <td><input type="text" name="oneEvent" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">命令:</td>
+                <td><input type="text" name="command" class="wu-text" /></td>
+                <td align="right">命令参数:</td>
+                <td><input type="text" name="commandParam" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">0变1延时:</td>
+                <td><input type="text" name="zerotoone" class="wu-text" /></td>
+                <td align="right">1变0延时:</td>
+                <td><input type="text" name="onetozero" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">是否屏蔽:</td>
+                <td><select id="type" class="easyui-combobox" name="shield" style="width:268px;">   
+    				<option value="0" selected=true>不屏蔽</option>   
+    				<option value="1">屏蔽</option>   
+				</select></td>
+                <td align="right">是否保留历史数据:</td>
+                <td><select id="type" class="easyui-combobox" name="historicalData" style="width:268px;">   
+    				<option value="0" selected=true>不保留</option>   
+    				<option value="1">保留</option>   
+				</select></td>
+            </tr>
+             <tr>
+                <td align="right">保存历史数据变化率:</td>
+                <td><input type="text" name="historicalChange" class="wu-text" /></td>
+                <td align="right">保存历史数据间隔:</td>
+                <td><input type="text" name="historicalInterval" class="wu-text" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!-- End of easyui-dialog -->
+<script type="text/javascript" src="../js/libs/jquery203.js"></script>
+<script type="text/javascript" src="../easyui/1.3.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../js/functionjs.js"></script>
+<script type="text/javascript" src="../js/controllers/Constants.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var URL = Constants.URL+"status/list.json";
+		$("#wu-datagrid-2").datagrid({
+			url:URL
+		});
+		$("#deviceId").combobox({
+			url:Constants.URL+"devices/biz"
+		});
+	})
+	/**
+	* Name 添加记录
+	*/
+	function add(){
+		var URL = Constants.URL+"status/add";
+		var formdatas = $("#wu-form-2").serializeJson();
+		formdatas["insertTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["updateTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["loginfo"] = "添加状态采集项";
+		formdatas["userid"] = localStorage.getItem("userid");
+		formdatas["username"] = localStorage.getItem("username");
+		//var paramsJson = JSON.stringify(formdatas);
+		$.getJSON(URL,formdatas,function(data){
+			if(data!="1"){
+				$.messager.alert("信息提示","保存失败，请填写完整","info");
+			}
+			else{
+				$.messager.alert("信息提示","保存成功","info");
+				$('#wu-dialog-2').dialog("close");
+				$("#wu-datagrid-2").datagrid("reload");
+			}
+		})
+	}
+	/**
+	* Name 打开添加窗口
+	*/
+	function openAdd(){
+		$('#wu-form-2').form('clear');
+		$("select").combobox("select","0");
+		$('#wu-dialog-2').dialog({
+			closed: false,
+			modal:true,
+            title: "添加信息",
+            buttons: [{
+                text: '确定',
+                iconCls: 'icon-ok',
+                handler: add
+            }, {
+                text: '取消',
+                iconCls: 'icon-cancel',
+                handler: function () {
+                    $('#wu-dialog-2').dialog('close');                    
+                }
+            }]
+        });
+	}
+	/**
+	* Name 修改记录
+	*/
+	function edit(){
+		var URL = Constants.URL+"status/update";
+		var formdatas = $("#wu-form-2").serializeJson();
+		formdatas["updateTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["loginfo"] = "修改状态采集项";
+		formdatas["userid"] = localStorage.getItem("userid");
+		formdatas["username"] = localStorage.getItem("username");
+		//var paramsJson = JSON.stringify(formdatas);
+		$.getJSON(URL,formdatas,function(data){
+			if(data!=1){
+				$.messager.alert("信息提示","修改失败，请重新填写用户名和密码","info");
+			}
+			else{
+				$.messager.alert("信息提示","修改成功","info");
+				$('#wu-dialog-2').dialog("close");
+				$("#wu-datagrid-2").datagrid("reload");
+			}
+		})
+	}
+	/**
+	* Name 打开修改窗口
+	*/
+	function openEdit(){
+		$('#wu-form-2').form('clear');
+		var item = $('#wu-datagrid-2').datagrid('getSelected');
+		if(item==null){
+			$.messager.alert("信息提示","请选择一行","info");return;
+		}
+		$('#wu-form-2').form('load', item);
+		$('#wu-dialog-2').dialog({
+			closed: false,
+			modal:true,
+            title: "修改信息",
+            buttons: [{
+                text: '确定',
+                iconCls: 'icon-ok',
+                handler: edit
+            }, {
+                text: '取消',
+                iconCls: 'icon-cancel',
+                handler: function () {
+                    $('#wu-dialog-2').dialog('close');                    
+                }
+            }]
+        });
+	}
+	/**
+	* Name 删除记录
+	*/
+	function openRemove(){
+		var item = $('#wu-datagrid-2').datagrid('getSelected');
+		if(item==null){
+			$.messager.alert("信息提示","请选择一行","info");return;
+		}
+		$.messager.confirm('信息提示','确定要删除该记录？', function(result){
+			if(result){
+				var URL = Constants.URL+"status/remove";
+				//var paramsJson = JSON.stringify(formdatas);
+				$.getJSON(URL,{"id":item.id,"loginfo":"删除状态采集项","userid":localStorage.getItem("userid"),"username":localStorage.getItem("username")},function(data){
+					if(data!=1){
+						$.messager.alert('信息提示','删除失败！','info');		
+					}
+					else{
+						$.messager.alert('信息提示','删除成功！','info');	
+						$("#wu-datagrid-2").datagrid("reload");
+					}
+				})
+			}	
+		});
+	}
+</script>
+	</body>
+</html>

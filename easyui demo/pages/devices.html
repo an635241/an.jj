@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设备管理</title>
+		<link rel="stylesheet" type="text/css" href="../easyui/1.3.4/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/wu.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+	</head>
+	<body>
+<div class="easyui-layout" data-options="fit:true">
+    <!-- Begin of toolbar -->
+    <div id="wu-toolbar-2">
+        <div class="wu-toolbar-button">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="openAdd()" plain="true">添加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit()" plain="true">修改</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" onclick="openRemove()" plain="true">删除</a>
+        </div>
+    </div>
+    <!-- End of toolbar -->
+    <table id="wu-datagrid-2" class="easyui-datagrid" toolbar="#wu-toolbar-2" data-options="fitColumns:true,singleSelect:true,rownumbers:true">
+    <thead>   
+        <tr>   
+            <th data-options="field:'name',width:100">设备名称</th>   
+            <th data-options="field:'type',width:100">协议类别</th>   
+            <th data-options="field:'serialPort',width:100">串口号</th>   
+            <th data-options="field:'serialParam',width:100">串口参数</th>   
+            <th data-options="field:'address',width:100">设备地址</th>   
+            <th data-options="field:'rate',width:100">通讯速率</th>   
+            <th data-options="field:'overtime',width:100">超时次数</th>   
+            <th data-options="field:'rank',width:100">超时级别</th>    
+            <th data-options="field:'shield',width:100,formatter:function(value,row,index){if(value==0)return '不屏蔽';else{return '屏蔽'}}">是否屏蔽</th>      
+        </tr>   
+    </thead>   
+    </table>
+</div>
+<!-- Begin of easyui-dialog -->
+<div id="wu-dialog-2" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:400px; padding:10px;">
+	<form id="wu-form-2" method="post">
+        <table>
+            <tr>
+                <td width="60" align="right">设备名称:</td>
+                <td><input type="text" name="name" class="wu-text" />
+                	<input type="hidden" name="id">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">协议类别:</td>
+                <td><input type="text" name="type" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">串口号:</td>
+                <td><input type="text" name="serialPort" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">串口参数:</td>
+                <td><input type="text" name="serialParam" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">设备地址:</td>
+                <td><input type="text" name="address" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">通讯速率:</td>
+                <td><input type="text" name="rate" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">超时次数:</td>
+                <td><input type="text" name="overtime" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">超时级别:</td>
+                <td><input type="text" name="rank" class="wu-text" /></td>
+            </tr>
+            <tr>
+                <td align="right">是否屏蔽:</td>
+                <td><select id="type" class="easyui-combobox" name="shield" style="width:268px;">   
+    				<option value="0" selected=true>不屏蔽</option>   
+    				<option value="1">屏蔽</option>   
+				</select></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!-- End of easyui-dialog -->
+<script type="text/javascript" src="../js/libs/jquery203.js"></script>
+<script type="text/javascript" src="../easyui/1.3.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../js/functionjs.js"></script>
+<script type="text/javascript" src="../js/controllers/Constants.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var URL = Constants.URL+"devices/list.json";
+		$("#wu-datagrid-2").datagrid({
+			url:URL
+		});
+	})
+	/**
+	* Name 添加记录
+	*/
+	function add(){
+		var URL = Constants.URL+"devices/add";
+		var formdatas = $("#wu-form-2").serializeJson();
+		formdatas["insertTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["updateTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["loginfo"] = "添加设备";
+		formdatas["userid"] = localStorage.getItem("userid");
+		formdatas["username"] = localStorage.getItem("username");
+		//var paramsJson = JSON.stringify(formdatas);
+		$.getJSON(URL,formdatas,function(data){
+			if(data!="1"){
+				$.messager.alert("信息提示","保存失败，请填写完整","info");
+			}
+			else{
+				$.messager.alert("信息提示","保存成功","info");
+				$('#wu-dialog-2').dialog("close");
+				$("#wu-datagrid-2").datagrid("reload");
+			}
+		})
+	}
+	/**
+	* Name 打开添加窗口
+	*/
+	function openAdd(){
+		$('#wu-form-2').form('clear');
+		$("select").combobox("select","0");
+		$('#wu-dialog-2').dialog({
+			closed: false,
+			modal:true,
+            title: "添加信息",
+            buttons: [{
+                text: '确定',
+                iconCls: 'icon-ok',
+                handler: add
+            }, {
+                text: '取消',
+                iconCls: 'icon-cancel',
+                handler: function () {
+                    $('#wu-dialog-2').dialog('close');                    
+                }
+            }]
+        });
+	}
+	/**
+	* Name 修改记录
+	*/
+	function edit(){
+		var URL = Constants.URL+"devices/update";
+		var formdatas = $("#wu-form-2").serializeJson();
+		formdatas["updateTime"] = new Date().format("yyyy-MM-dd hh:mm:ss");
+		formdatas["loginfo"] = "修改设备";
+		formdatas["userid"] = localStorage.getItem("userid");
+		formdatas["username"] = localStorage.getItem("username");
+		//var paramsJson = JSON.stringify(formdatas);
+		$.getJSON(URL,formdatas,function(data){
+			if(data!=1){
+				$.messager.alert("信息提示","修改失败，请重新填写用户名和密码","info");
+			}
+			else{
+				$.messager.alert("信息提示","修改成功","info");
+				$('#wu-dialog-2').dialog("close");
+				$("#wu-datagrid-2").datagrid("reload");
+			}
+		})
+	}
+	/**
+	* Name 打开修改窗口
+	*/
+	function openEdit(){
+		$('#wu-form-2').form('clear');
+		var item = $('#wu-datagrid-2').datagrid('getSelected');
+		if(item==null){
+			$.messager.alert("信息提示","请选择一行","info");return;
+		}
+		$('#wu-form-2').form('load', item);
+		$('#wu-dialog-2').dialog({
+			closed: false,
+			modal:true,
+            title: "修改信息",
+            buttons: [{
+                text: '确定',
+                iconCls: 'icon-ok',
+                handler: edit
+            }, {
+                text: '取消',
+                iconCls: 'icon-cancel',
+                handler: function () {
+                    $('#wu-dialog-2').dialog('close');                    
+                }
+            }]
+        });
+	}
+	/**
+	* Name 删除记录
+	*/
+	function openRemove(){
+		var item = $('#wu-datagrid-2').datagrid('getSelected');
+		if(item==null){
+			$.messager.alert("信息提示","请选择一行","info");return;
+		}
+		$.messager.confirm('信息提示','确定要删除该记录？', function(result){
+			if(result){
+				var URL = Constants.URL+"devices/remove";
+				//var paramsJson = JSON.stringify(formdatas);
+				$.getJSON(URL,{"id":item.id,"loginfo":"删除设备","userid":localStorage.getItem("userid"),"username":localStorage.getItem("username")},function(data){
+					if(data!=1){
+						$.messager.alert('信息提示','删除失败！','info');		
+					}
+					else{
+						$.messager.alert('信息提示','删除成功！','info');	
+						$("#wu-datagrid-2").datagrid("reload");
+					}
+				})
+			}	
+		});
+	}
+</script>
+	</body>
+</html>

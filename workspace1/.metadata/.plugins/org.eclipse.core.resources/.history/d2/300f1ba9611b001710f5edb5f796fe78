@@ -1,0 +1,23 @@
+package com.yujiu.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.yujiu.base.web.controller.BaseCurdController;
+import com.yujiu.model.Logs;
+import com.yujiu.service.LogsService;
+
+@Controller
+@RequestMapping(value="/logs")
+public class LogsController extends BaseCurdController<Logs> {
+	@Autowired
+	private LogsService logsService;
+
+	@Override
+	protected BaseCurdController<Logs>.CrudInfo init() {
+		// TODO Auto-generated method stub
+		return new CrudInfo("logs/", logsService);
+	}
+
+}

@@ -41,6 +41,9 @@ import com.yujiu.base.common.util.CustomDateEditorBase;
 import com.yujiu.base.common.util.SimplePage;
 import com.yujiu.base.service.BaseCurdService;
 import com.yujiu.base.web.common.HSSFExport;
+import com.yujiu.model.Logs;
+import com.yujiu.model.Users;
+import com.yujiu.service.LogsService;
 
 
 public abstract class BaseCurdController<ModelType> {
@@ -48,6 +51,9 @@ public abstract class BaseCurdController<ModelType> {
 	protected final static String WITH_MODEL_TYPE="withModelType";
 	
 	private BaseCurdService service;
+	
+	@Autowired
+	private LogsService logsService;
 
 	private CrudInfo crudInfo;
 
@@ -63,15 +69,6 @@ public abstract class BaseCurdController<ModelType> {
 	}
 
 	protected abstract CrudInfo init();
-	
-//	protected String getUserId(){
-//		Object principal=SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//		String username="unknown";
-//		if(principal instanceof UserDetails){
-//			username=((UserDetails)principal).getUsername();
-//		}
-//		return username;
-//	}
 	
 	protected String getUserId(){
 		String username=request.getSession().getAttribute("userIDFromUC").toString();
@@ -92,6 +89,7 @@ public abstract class BaseCurdController<ModelType> {
 	@RequestMapping(value = "/list.json")
 	@ResponseBody
 	public  Map<String, Object> queryList(HttpServletRequest req, Model model) throws ServiceException {
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		int pageNo = StringUtils.isEmpty(req.getParameter("page")) ? 1 : Integer.parseInt(req.getParameter("page"));
 		int pageSize = StringUtils.isEmpty(req.getParameter("rows")) ? 10 : Integer.parseInt(req.getParameter("rows"));
 		String sortColumn = StringUtils.isEmpty(req.getParameter("sort")) ? "" : String.valueOf(req.getParameter("sort"));
@@ -104,6 +102,61 @@ public abstract class BaseCurdController<ModelType> {
 		obj.put("total", total);
 		obj.put("rows", list);
 		return obj;
+	}
+	
+	@RequestMapping(value="/add")
+	@ResponseBody
+	public String add(ModelType modelType,String loginfo,String userid,String username){
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		try {
+			Logs log = new Logs();
+			log.setLogInfo(loginfo);
+			log.setInsertTime(new Date());
+			log.setInsertUser(Integer.parseInt(userid));
+			log.setUsername(username);
+			logsService.add(log);
+			return service.add(modelType)+"";
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "0";
+	}
+	@RequestMapping(value="/update")
+	@ResponseBody
+	public String update(ModelType modelType,String loginfo,String userid,String username){
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		try {
+			Logs log = new Logs();
+			log.setLogInfo(loginfo);
+			log.setInsertTime(new Date());
+			log.setInsertUser(Integer.parseInt(userid));
+			log.setUsername(username);
+			logsService.add(log);
+			return service.modifyById(modelType)+"";
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "0";
+	}
+	@RequestMapping(value="/remove")
+	@ResponseBody
+	public String remove(ModelType modelType,String loginfo,String userid,String username){
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		try {
+			Logs log = new Logs();
+			log.setLogInfo(loginfo);
+			log.setInsertTime(new Date());
+			log.setInsertUser(Integer.parseInt(userid));
+			log.setUsername(username);
+			logsService.add(log);
+			return service.deleteById(modelType)+"";
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "0";
 	}
 	
 	public Map<String, Object> builderParams(HttpServletRequest req,
@@ -159,9 +212,18 @@ public abstract class BaseCurdController<ModelType> {
 		return new ResponseEntity<ModelType>(type, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/biz",method=RequestMethod.GET)
+	@RequestMapping(value = "/biz")
 	@ResponseBody
-	public List<ModelType> getBiz(ModelType modelType,HttpServletRequest req,Model model)throws ServiceException{
+	public List<ModelType> getBiz(ModelType modelType,HttpServletRequest req,Model model,String loginfo,String userid,String username)throws ServiceException{
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		if(loginfo!=null){
+			Logs log = new Logs();
+			log.setLogInfo(loginfo);
+			log.setInsertTime(new Date());
+			log.setInsertUser(Integer.parseInt(userid));
+			log.setUsername(username);
+			logsService.add(log);
+		}
 		Map<String,Object> params=builderParams(req, model);
 		return this.service.findByBiz(modelType, params);
 	}
@@ -183,21 +245,13 @@ public abstract class BaseCurdController<ModelType> {
 		service.modifyById(type);
 		return new ResponseEntity<String>("", HttpStatus.OK);
 	}
-
-	
-	@RequestMapping(method=RequestMethod.DELETE)
-	public ResponseEntity<String> delete(ModelType type,HttpServletRequest req) throws ServiceException {
-		service.deleteById(type);
-		Map<String, Boolean> flag = new HashMap<String, Boolean>();
-		flag.put("success", true);
-		return new ResponseEntity<String>("", HttpStatus.OK);
-	}
 	
 
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/save",method=RequestMethod.POST)
 	public ResponseEntity<Map<String, Boolean>> save(HttpServletRequest req) throws JsonParseException, JsonMappingException, IOException,
 	ServiceException {
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		Map<String, Boolean> flag = new HashMap<String, Boolean>();
 
 		String deletedList = StringUtils.isEmpty(req.getParameter("deleted")) ? "" : req.getParameter("deleted");

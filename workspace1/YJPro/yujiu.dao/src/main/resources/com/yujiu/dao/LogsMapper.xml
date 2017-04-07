@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yujiu.dao.LogsMapper" >
+  <resultMap id="BaseResultMap" type="com.yujiu.model.Logs" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="log_info" property="logInfo" jdbcType="VARCHAR" />
+    <result column="insert_time" property="insertTime" jdbcType="TIMESTAMP" />
+    <result column="insert_user" property="insertUser" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, log_info, insert_time, insert_user, username
+  </sql>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="null!=params.queryCondition and ''!=params.queryCondition" >
+        ${params.queryCondition}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM logs
+    WHERE id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer" >
+    SELECT COUNT(1) as s FROM logs WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM logs WHERE 1=1 
+    <include refid="condition" />
+    <if test="orderByField != null and ''!=orderByField" >
+      ORDER BY ${orderByField}
+      <if test="orderByField" >
+        ${orderBy}
+      </if>
+    </if>
+     LIMIT #{page.startRowNum} ,#{page.pageSize} 
+  </select>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM logs WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM logs
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByPrimarayKeyForModel" parameterType="com.yujiu.model.Logs" >
+    DELETE FROM logs
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yujiu.model.Logs" >
+    INSERT INTO logs (id, log_info, insert_time, 
+      insert_user, username)
+    VALUES (#{id,jdbcType=INTEGER}, #{logInfo,jdbcType=VARCHAR}, #{insertTime,jdbcType=TIMESTAMP}, 
+      #{insertUser,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yujiu.model.Logs" >
+    INSERT INTO logs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="logInfo != null" >
+        log_info,
+      </if>
+      <if test="insertTime != null" >
+        insert_time,
+      </if>
+      <if test="insertUser != null" >
+        insert_user,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="logInfo != null" >
+        #{logInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null" >
+        #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertUser != null" >
+        #{insertUser,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yujiu.model.Logs" >
+    UPDATE logs
+    <set >
+      <if test="logInfo != null" >
+        log_info = #{logInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null" >
+        insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertUser != null" >
+        insert_user = #{insertUser,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yujiu.model.Logs" >
+    UPDATE logs
+    SET log_info = #{logInfo,jdbcType=VARCHAR},
+      insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      insert_user = #{insertUser,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR}
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="search" resultType="map">
+  	select * from `logs` t1 LEFT JOIN users t2 on t1.insert_user=t2.id where 1=1
+  	<if test="date0 !=null and date0 != ''">
+  		and t1.insert_time >#{date0}
+  	</if>
+  	<if test="date1 !=null and date1!=''">
+  		and t1.insert_time &lt;#{date1}
+  	</if>
+  	<if test="type !=null and type!=''">
+  		and t2.type=#{type}
+  	</if>
+  	<if test="name !=null and name!=''">
+  		and t2.username=#{name}
+  	</if>
+  	<if test="keyword !=null and keyword!=''">
+  		and t1.log_info like '%${keyword}%'
+  	</if>
+  </select>
+</mapper>

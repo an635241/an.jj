@@ -1,9 +1,0 @@
-package com.topsports.weixin.common.utils;
-
-public class HexConversionUtil {
-	//十进制转十六进制
-	public static String  tenToSixteen(int data){
-		return Integer.toHexString(data);
-	}
-
-}

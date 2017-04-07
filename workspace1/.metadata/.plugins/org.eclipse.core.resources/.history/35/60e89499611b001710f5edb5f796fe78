@@ -1,0 +1,22 @@
+package com.yujiu.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yujiu.base.dao.BaseCurdMapper;
+import com.yujiu.base.service.BaseCurdService;
+import com.yujiu.dao.LogsMapper;
+
+@Service
+public class LogsService extends BaseCurdService {
+	
+	@Autowired
+	private LogsMapper logsMapper;
+
+	@Override
+	public BaseCurdMapper init() {
+		// TODO Auto-generated method stub
+		return logsMapper;
+	}
+
+}

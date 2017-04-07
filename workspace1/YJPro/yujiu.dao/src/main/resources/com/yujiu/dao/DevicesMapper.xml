@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yujiu.dao.DevicesMapper" >
+  <resultMap id="BaseResultMap" type="com.yujiu.model.Devices" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="serial_port" property="serialPort" jdbcType="VARCHAR" />
+    <result column="serial_param" property="serialParam" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="rate" property="rate" jdbcType="INTEGER" />
+    <result column="overtime" property="overtime" jdbcType="INTEGER" />
+    <result column="rank" property="rank" jdbcType="INTEGER" />
+    <result column="shield" property="shield" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, type, serial_port, serial_param, address, rate, overtime, rank, shield
+  </sql>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="null!=params.queryCondition and ''!=params.queryCondition" >
+        ${params.queryCondition}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM devices
+    WHERE id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer" >
+    SELECT COUNT(1) as s FROM devices WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM devices WHERE 1=1 
+    <include refid="condition" />
+    <if test="orderByField != null and ''!=orderByField" >
+      ORDER BY ${orderByField}
+      <if test="orderByField" >
+        ${orderBy}
+      </if>
+    </if>
+     LIMIT #{page.startRowNum} ,#{page.pageSize} 
+  </select>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+     FROM devices WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM devices
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByPrimarayKeyForModel" parameterType="com.yujiu.model.Devices" >
+    DELETE FROM devices
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yujiu.model.Devices" >
+    INSERT INTO devices (id, name, type, 
+      serial_port, serial_param, address, 
+      rate, overtime, rank, 
+      shield)
+    VALUES (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{serialPort,jdbcType=VARCHAR}, #{serialParam,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{rate,jdbcType=INTEGER}, #{overtime,jdbcType=INTEGER}, #{rank,jdbcType=INTEGER}, 
+      #{shield,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yujiu.model.Devices" >
+    INSERT INTO devices
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="serialPort != null" >
+        serial_port,
+      </if>
+      <if test="serialParam != null" >
+        serial_param,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="rate != null" >
+        rate,
+      </if>
+      <if test="overtime != null" >
+        overtime,
+      </if>
+      <if test="rank != null" >
+        rank,
+      </if>
+      <if test="shield != null" >
+        shield,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="serialPort != null" >
+        #{serialPort,jdbcType=VARCHAR},
+      </if>
+      <if test="serialParam != null" >
+        #{serialParam,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null" >
+        #{rate,jdbcType=INTEGER},
+      </if>
+      <if test="overtime != null" >
+        #{overtime,jdbcType=INTEGER},
+      </if>
+      <if test="rank != null" >
+        #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="shield != null" >
+        #{shield,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yujiu.model.Devices" >
+    UPDATE devices
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="serialPort != null" >
+        serial_port = #{serialPort,jdbcType=VARCHAR},
+      </if>
+      <if test="serialParam != null" >
+        serial_param = #{serialParam,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null" >
+        rate = #{rate,jdbcType=INTEGER},
+      </if>
+      <if test="overtime != null" >
+        overtime = #{overtime,jdbcType=INTEGER},
+      </if>
+      <if test="rank != null" >
+        rank = #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="shield != null" >
+        shield = #{shield,jdbcType=TINYINT},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yujiu.model.Devices" >
+    UPDATE devices
+    SET name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      serial_port = #{serialPort,jdbcType=VARCHAR},
+      serial_param = #{serialParam,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=INTEGER},
+      overtime = #{overtime,jdbcType=INTEGER},
+      rank = #{rank,jdbcType=INTEGER},
+      shield = #{shield,jdbcType=TINYINT}
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
