@@ -163,7 +163,6 @@ public class DataView extends Frame {
 		openSerialButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
 				//获取串口名称
 				String commName = commChoice.getSelectedItem();			
 				//获取波特率
@@ -182,7 +181,6 @@ public class DataView extends Frame {
 						//串口名、波特率均获取正确时
 						int bps = Integer.parseInt(bpsStr);
 						try {
-							
 							//获取指定端口名及波特率的串口对象
 							serialPort = SerialTool.openPort(commName, bps);
 							//在该串口对象上添加监听器
@@ -196,7 +194,6 @@ public class DataView extends Frame {
 						}
 					}
 				}
-				
 			}
 		});
 		
@@ -384,7 +381,7 @@ public class DataView extends Frame {
 	 * @author zhong
 	 *
 	 */
-	private class SerialListener implements SerialPortEventListener {
+	public class SerialListener implements SerialPortEventListener {
 		
 		/**
 		 * 处理监控到的串口事件

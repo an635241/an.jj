@@ -21,6 +21,12 @@
         <groupId>com.yujiu</groupId>
         <artifactId>yujiu.service</artifactId>
         <version>${project.version}</version>
+        <exclusions>
+				<exclusion>
+					<artifactId>log4j-over-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
     </dependency>
     <dependency>
         <groupId>com.yujiu</groupId>
@@ -167,7 +173,21 @@
 				<artifactId>commons-fileupload</artifactId>
 				<version>1.3.1</version>
 			</dependency>
-		
+		    <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-api</artifactId>  
+        <version>1.6.6</version>  
+    </dependency>  
+    <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-log4j12</artifactId>  
+        <version>1.6.6</version>  
+    </dependency>  
+    <dependency>  
+        <groupId>log4j</groupId>  
+        <artifactId>log4j</artifactId>  
+        <version>1.2.16</version>  
+    </dependency>  
   </dependencies>
   <build>
     <finalName>yujiu.web</finalName>

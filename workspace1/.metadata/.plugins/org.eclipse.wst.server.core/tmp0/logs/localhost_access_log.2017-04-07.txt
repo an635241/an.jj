@@ -132,3 +132,6 @@
 192.168.7.156 - - [07/Apr/2017:19:26:24 +0800] "POST /yujiu.web/users/list.json HTTP/1.1" 200 364
 192.168.7.156 - - [07/Apr/2017:19:35:47 +0800] "GET /topit-weixin-web/mobile/shopsalinfo/getbestsalecat0?branch= HTTP/1.1" 404 1096
 192.168.7.156 - - [07/Apr/2017:19:35:47 +0800] "GET /topit-weixin-web/mobile/shopsalinfo/getbestsalecat1?branch= HTTP/1.1" 404 1096
+192.168.7.156 - - [07/Apr/2017:20:03:59 +0800] "GET /topit-weixin-web/mobile/shopsalinfo/getbestsalecat0?branch= HTTP/1.1" 404 1096
+192.168.7.156 - - [07/Apr/2017:20:03:59 +0800] "GET /topit-weixin-web/mobile/shopsalinfo/getbestsalecat1?branch= HTTP/1.1" 404 1096
+192.168.7.156 - - [07/Apr/2017:20:04:25 +0800] "GET /topit-weixin-web/mobile/salinfo/orgbase?type=0 HTTP/1.1" 404 1072

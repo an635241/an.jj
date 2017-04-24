@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="keyword"/>
 			<item value="BaseResultMap"/>
 			<item value="Base_Column_List"/>
 			<item value="ModelType"/>
@@ -15,7 +16,6 @@
 			<item value="updateByPrimaryKeySelective"/>
 			<item value="selectByPage"/>
 			<item value="pages"/>
-			<item value="file"/>
 		</list>
 		<list key="replacehistory">
 			<item value="yujiu"/>

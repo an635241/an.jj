@@ -1,0 +1,105 @@
+2017-04-17 16:49:09,834 DEBUG logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-04-17 16:49:10,576 DEBUG spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+2017-04-17 16:49:10,696 DEBUG spring.SqlSessionFactoryBean - Property 'mapperLocations' was not specified or no matching resources found
+2017-04-17 16:50:58,418 DEBUG logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-04-17 16:50:58,879 DEBUG spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+2017-04-17 16:50:58,978 DEBUG spring.SqlSessionFactoryBean - Property 'mapperLocations' was not specified or no matching resources found
+2017-04-17 16:52:56,821 DEBUG logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2017-04-17 16:52:57,270 DEBUG spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+2017-04-17 16:52:57,353 DEBUG spring.SqlSessionFactoryBean - Property 'mapperLocations' was not specified or no matching resources found
+2017-04-17 16:53:04,708 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:04,724 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d3fc988] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:05,317 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:05,324 DEBUG UsersMapper.selectByParams - ==>  Preparing: SELECT id, password, username, type, pages, devices, insert_time, insert_user, update_user, update_time FROM users WHERE 1=1 and username=? and password=? 
+2017-04-17 16:53:05,357 DEBUG UsersMapper.selectByParams - ==> Parameters: 3(String), 3(String)
+2017-04-17 16:53:05,419 DEBUG UsersMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:05,426 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:05,429 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d3fc988]
+2017-04-17 16:53:05,619 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:05,619 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43e2aba0] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:05,623 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:05,631 DEBUG LogsMapper.insertSelective - ==>  Preparing: INSERT INTO logs ( log_info, insert_time, insert_user, username ) values ( ?, ?, ?, ? ) 
+2017-04-17 16:53:05,633 DEBUG LogsMapper.insertSelective - ==> Parameters: 登陆(String), 2017-04-17 16:53:05.618(Timestamp), 5(Integer), 3(String)
+2017-04-17 16:53:05,705 DEBUG LogsMapper.insertSelective - <==    Updates: 1
+2017-04-17 16:53:05,708 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:05,745 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43e2aba0]
+2017-04-17 16:53:05,758 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:05,759 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@321cfa4a] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:05,764 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:05,765 DEBUG UsersMapper.selectByParams - ==>  Preparing: SELECT id, password, username, type, pages, devices, insert_time, insert_user, update_user, update_time FROM users WHERE 1=1 and username=? and password=? 
+2017-04-17 16:53:05,767 DEBUG UsersMapper.selectByParams - ==> Parameters: 3(String), 3(String)
+2017-04-17 16:53:05,771 DEBUG UsersMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:05,774 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:05,774 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@321cfa4a]
+2017-04-17 16:53:06,845 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:06,848 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57a5774] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:06,853 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:06,854 DEBUG DeviceStatusMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, zero_rank, zero_event, one_rank, one_event, command, command_param, zerotoone, onetozero, shield, historical_data, historical_interval, device_name FROM device_status WHERE 1=1 
+2017-04-17 16:53:06,856 DEBUG DeviceStatusMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:06,873 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:06,874 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5dc5f8e0] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:06,880 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:06,881 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17aa2672] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:06,915 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:06,916 DEBUG DevicesMapper.selectByParams - ==>  Preparing: SELECT id, name, type, serial_port, serial_param, address, rate, overtime, rank, shield FROM devices WHERE 1=1 
+2017-04-17 16:53:06,916 DEBUG DevicesMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:06,962 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:06,963 DEBUG DeviceCollectionMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, ratio, alarm_up, alarm_low, recover_up, recover_low, command, command_param, alarm_rank, alarm_delay, recover_delay, max, min, shield, historical_data, historical_change, historical_interval, device_name FROM device_collection WHERE 1=1 
+2017-04-17 16:53:06,963 DEBUG DeviceCollectionMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:07,001 DEBUG DeviceCollectionMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:07,003 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:07,008 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17aa2672]
+2017-04-17 16:53:07,129 DEBUG DeviceStatusMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:07,138 DEBUG DevicesMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:07,139 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:07,140 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5dc5f8e0]
+2017-04-17 16:53:07,162 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:07,164 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57a5774]
+2017-04-17 16:53:59,910 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:59,912 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523b2573] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:59,914 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:59,915 DEBUG DevicesMapper.selectByParams - ==>  Preparing: SELECT id, name, type, serial_port, serial_param, address, rate, overtime, rank, shield FROM devices WHERE 1=1 
+2017-04-17 16:53:59,919 DEBUG DevicesMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:59,925 DEBUG DevicesMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:59,927 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:59,929 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523b2573]
+2017-04-17 16:53:59,946 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:59,948 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79bf3740] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:59,950 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:59,951 DEBUG DeviceCollectionMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, ratio, alarm_up, alarm_low, recover_up, recover_low, command, command_param, alarm_rank, alarm_delay, recover_delay, max, min, shield, historical_data, historical_change, historical_interval, device_name FROM device_collection WHERE 1=1 
+2017-04-17 16:53:59,954 DEBUG DeviceCollectionMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:59,960 DEBUG DeviceCollectionMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:59,962 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:53:59,965 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:53:59,965 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78898a0c] was not registered for synchronization because synchronization is not active
+2017-04-17 16:53:59,970 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79bf3740]
+2017-04-17 16:53:59,988 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:53:59,989 DEBUG DeviceStatusMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, zero_rank, zero_event, one_rank, one_event, command, command_param, zerotoone, onetozero, shield, historical_data, historical_interval, device_name FROM device_status WHERE 1=1 
+2017-04-17 16:53:59,990 DEBUG DeviceStatusMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:53:59,996 DEBUG DeviceStatusMapper.selectByParams - <==      Total: 1
+2017-04-17 16:53:59,999 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:54:00,000 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78898a0c]
+2017-04-17 16:54:28,753 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:54:28,754 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f1ab0b5] was not registered for synchronization because synchronization is not active
+2017-04-17 16:54:28,757 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:54:28,757 DEBUG DevicesMapper.selectByParams - ==>  Preparing: SELECT id, name, type, serial_port, serial_param, address, rate, overtime, rank, shield FROM devices WHERE 1=1 
+2017-04-17 16:54:28,758 DEBUG DevicesMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:54:28,760 DEBUG DevicesMapper.selectByParams - <==      Total: 1
+2017-04-17 16:54:28,763 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:54:28,765 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f1ab0b5]
+2017-04-17 16:54:28,778 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:54:28,781 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24317478] was not registered for synchronization because synchronization is not active
+2017-04-17 16:54:28,787 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:54:28,788 DEBUG DeviceStatusMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, zero_rank, zero_event, one_rank, one_event, command, command_param, zerotoone, onetozero, shield, historical_data, historical_interval, device_name FROM device_status WHERE 1=1 
+2017-04-17 16:54:28,789 DEBUG DeviceStatusMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:54:28,791 DEBUG DeviceStatusMapper.selectByParams - <==      Total: 1
+2017-04-17 16:54:28,792 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:54:28,794 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24317478]
+2017-04-17 16:54:28,798 DEBUG spring.SqlSessionUtils - Creating a new SqlSession
+2017-04-17 16:54:28,799 DEBUG spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34ae2056] was not registered for synchronization because synchronization is not active
+2017-04-17 16:54:28,816 DEBUG transaction.SpringManagedTransaction - JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java] will not be managed by Spring
+2017-04-17 16:54:28,817 DEBUG DeviceCollectionMapper.selectByParams - ==>  Preparing: SELECT id, name, device_id, ratio, alarm_up, alarm_low, recover_up, recover_low, command, command_param, alarm_rank, alarm_delay, recover_delay, max, min, shield, historical_data, historical_change, historical_interval, device_name FROM device_collection WHERE 1=1 
+2017-04-17 16:54:28,817 DEBUG DeviceCollectionMapper.selectByParams - ==> Parameters: 
+2017-04-17 16:54:28,825 DEBUG DeviceCollectionMapper.selectByParams - <==      Total: 1
+2017-04-17 16:54:28,827 DEBUG transaction.SpringManagedTransaction - Committing JDBC Connection [jdbc:mysql://localhost:3307/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, UserName=an.jj@localhost, MySQL Connector Java]
+2017-04-17 16:54:28,828 DEBUG spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34ae2056]

@@ -1,0 +1,33 @@
+package com.yujiu.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.yujiu.common.serialportutils.SerialTool;
+import com.yujiu.model.Devices;
+import com.yujiu.service.DevicesService;
+
+@Controller
+@RequestMapping(value="/base")
+public class BaseController {
+	@Autowired
+	private SerialTool serialTool;
+	@Autowired
+	private HttpServletResponse response;
+	@Autowired
+	private DevicesService sevicesService;
+	
+	@RequestMapping(value="/openmonitor")
+	@ResponseBody
+	public String openmonitor(){
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		List<Devices> list = 
+	}
+
+}

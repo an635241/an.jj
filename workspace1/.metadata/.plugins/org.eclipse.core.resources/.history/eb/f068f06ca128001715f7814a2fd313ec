@@ -1,0 +1,32 @@
+package com.yujiu.common.serialportutils;
+
+import gnu.io.SerialPort;
+
+import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
+
+public class SerialReaderTool implements Observer {
+	
+	SerialReader sr=new SerialReader(); 
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/**
+     * 打开串口
+     * @param String message
+     */
+	public void openSerialPort(HashMap<String, Object> params)
+    { 
+        try {
+			sr.open(params);
+		    sr.addObserver(this);
+		} catch (Exception e) { 
+		}
+    }
+
+}

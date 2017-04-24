@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -61,6 +62,8 @@ public abstract class BaseCurdController<ModelType> {
 	private HttpServletRequest request;
 	@Autowired
 	private HttpServletResponse response;
+	
+	Logger logger = Logger.getLogger(BaseCurdController.class);
 	
 	@PostConstruct
 	protected void initConfig() {		

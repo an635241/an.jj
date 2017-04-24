@@ -1,0 +1,72 @@
+package com.yujiu.common.serialportutils;
+
+import gnu.io.SerialPort;
+
+import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
+
+public class SerialReaderTool implements Observer {
+	
+	SerialReader sr=new SerialReader(); 
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		String mt=new String((byte[])arg);  
+    	System.out.println("---"+mt); //串口数据 
+    	
+	}
+	 /**
+     * 往串口发送数据,实现双向通讯.
+     * @param string message
+     */
+    public void send(String message)
+    {
+    	if(message!=null&&message.length()!=0)
+		 {  
+			sr.start();  
+			sr.run(message);  
+		 } 
+    }
+	
+	/**
+     * 打开串口
+     * @param String message
+     */
+	public void openSerialPort(HashMap<String, Comparable> params)
+    { 
+        try {
+			sr.open(params);
+		    sr.addObserver(this);
+		} catch (Exception e) { 
+		}
+    }
+	public void close(){
+		sr.close();
+	}
+	 public String Bytes2HexString(byte[] b) { 
+		   String ret = ""; 
+		   for (int i = 0; i < b.length; i++) { 
+			     String hex = Integer.toHexString(b[i] & 0xFF); 
+			     if (hex.length() == 1) { 
+			       hex = '0' + hex; 
+				     } 
+			     ret += hex.toUpperCase(); 
+			   }
+		return ret;
+	   }
+
+
+	  public  String hexString2binaryString(String hexString) {
+	  if (hexString == null || hexString.length() % 2 != 0)
+		 return null;
+		 String bString = "", tmp;
+		 for (int i = 0; i < hexString.length(); i++) {
+		 tmp = "0000" + Integer.toBinaryString(Integer.parseInt(hexString.substring(i, i + 1), 16));
+			  bString += tmp.substring(tmp.length() - 4);
+		  }
+		 return bString;
+	  } 
+
+}
