@@ -1,6 +1,0 @@
-#Tomcat publish data
-#Tue Apr 18 15:53:09 CST 2017
-org.eclipse.jst.j2ee.server\:yujiu.service=WEB-INF/lib/yujiu.service-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:yujiu.common=WEB-INF/lib/yujiu.common-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:yujiu.dao=WEB-INF/lib/yujiu.dao-0.0.1-SNAPSHOT.jar
-org.eclipse.jst.j2ee.server\:yujiu.model=WEB-INF/lib/yujiu.model-0.0.1-SNAPSHOT.jar

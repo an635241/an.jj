@@ -1,7 +1,0 @@
-
-public class HelloWord {
-	public static void main(String[] args){
-		String aa="1111";
-		System.out.print("11111");
-	}
-}
